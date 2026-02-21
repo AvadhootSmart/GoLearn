@@ -1,8 +1,32 @@
 # Modules and Cargo
 
-Rust's module system lets you organize code into separate files and paths. `cargo` is the package manager and build system. Here, we'll practice defining a nested module.
+## Concept first: organizing code with modules
 
-## Assignment
+Rust modules (`mod`) create namespaces so related code can be grouped and addressed by paths.
+
+Example:
+
+```rust
+mod server {
+    pub mod network {
+        pub fn connect() {
+            println!("connected");
+        }
+    }
+}
+
+fn main() {
+    crate::server::network::connect();
+}
+```
+
+Nuances:
+
+- `pub` controls visibility across module boundaries.
+- `crate::` starts from the crate root (an absolute path).
+- Good module structure makes larger Rust projects easier to navigate and test.
+
+## Exercise task
 
 1. Define a `mod server` block.
 2. Inside `server`, define a `pub mod network`.

@@ -1,8 +1,32 @@
 # Traits in Rust
 
-Traits are a way to define shared behavior in Rust. They are similar to interfaces in other languages.
+## Concept first: shared behavior through traits
 
-## Assignment
+A trait defines a shared set of methods that different types can implement.
+
+Example:
+
+```rust
+trait Summary {
+    fn summarize(&self) -> String;
+}
+
+struct NewsArticle;
+
+impl Summary for NewsArticle {
+    fn summarize(&self) -> String {
+        String::from("Article summary")
+    }
+}
+```
+
+Nuances:
+
+- Traits specify behavior, not data layout.
+- `&self` means the method borrows the instance immutably.
+- Trait-based design enables polymorphism while keeping types explicit.
+
+## Exercise task
 
 1. Define a trait `Summary` with a single method signature `fn summarize(&self) -> String;`.
 2. Given a `NewsArticle` struct, implement the `Summary` trait for it to return `"Article summary"`.
