@@ -1,8 +1,39 @@
 # Concurrency in Rust
 
-Rust provides safe concurrency by design. You can spawn threads to run code simultaneously and use channels or mutexes to share state safely.
+## Concept first: running work in parallel with threads
 
-## Assignment
+Rust lets you spawn OS threads using `std::thread::spawn`. A spawned thread runs concurrently with the main thread.
+
+Example:
+
+```rust
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    let handle = thread::spawn(|| {
+        for i in 1..=3 {
+            println!("hi number {} from the spawned thread!", i);
+            thread::sleep(Duration::from_millis(1));
+        }
+    });
+
+    for i in 1..=3 {
+        println!("hi number {} from the main thread!", i);
+        thread::sleep(Duration::from_millis(1));
+    }
+
+    handle.join().unwrap();
+}
+```
+
+Nuances:
+
+- Output order can vary because scheduling is nondeterministic.
+- `join()` waits for the spawned thread to finish.
+- Forgetting to join can let `main` exit before spawned work completes.
+
+## Exercise task
 
 1. Import `std::thread` and `std::time::Duration`.
 2. Spawn a thread that loops 3 times, prints `"hi number {} from the spawned thread!"`, and sleeps for 1 millisecond.

@@ -1,7 +1,26 @@
 # Squashing Bugs
 
-Part of developing Software is squashing bugs. In Rust, the compiler is your best friend when it comes to tracking down issues.
+## Concept first: using compiler errors as guidance
 
-## Assignment
+A core Rust workflow is: write code → compile/run → read compiler feedback → fix the issue. Rust's compiler errors are usually descriptive and often include hints that point directly to the fix.
 
-There is a bug in the code. Run it and read the error message from the Rust compiler. Then, fix the bug so the program correctly prints the message.
+Example debugging loop:
+
+```rust
+fn main() {
+    let message = "Textio online";
+    println!("{}", message);
+}
+```
+
+If a variable name is misspelled or a type is used incorrectly, the compiler reports what it expected and where the issue is.
+
+Nuances to remember:
+
+- Fix the **first** compile error first; later errors are often side effects.
+- Pay attention to line numbers and suggested fixes in the error output.
+- Re-run after each small fix.
+
+## Exercise task
+
+There is a bug in the starter code. Run it, read the Rust compiler error, and fix the code so the program prints the expected message correctly.
