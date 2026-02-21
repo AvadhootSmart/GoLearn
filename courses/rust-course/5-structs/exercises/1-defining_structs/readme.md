@@ -7,26 +7,26 @@ A `struct` groups related fields under one named type. This is useful when sever
 Example:
 
 ```rust
-struct Message {
-    body: String,
-    recipient: String,
+struct Account {
+    id: u32,
+    email: String,
 }
 
 fn main() {
-    let msg = Message {
-        body: String::from("Hey there"),
-        recipient: String::from("555-0199"),
+    let account = Account {
+        id: 42,
+        email: String::from("dev@example.com"),
     };
 
-    println!("{}", msg.body);
+    println!("{}", account.email);
 }
 ```
 
 Nuances:
 
 - Field names are required when constructing a normal struct.
-- Field access uses dot syntax (`msg.body`).
-- `String` fields own their data, which works well with Rust ownership rules.
+- Field access uses dot syntax (`account.email`).
+- Struct fields can mix types (numbers, strings, booleans, etc.) as long as each field type is explicit.
 
 ## Exercise task
 

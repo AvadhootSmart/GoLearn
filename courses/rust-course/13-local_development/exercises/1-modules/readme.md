@@ -7,16 +7,16 @@ Rust modules (`mod`) create namespaces so related code can be grouped and addres
 Example:
 
 ```rust
-mod server {
-    pub mod network {
-        pub fn connect() {
-            println!("connected");
+mod analytics {
+    pub mod metrics {
+        pub fn record() {
+            println!("metric recorded");
         }
     }
 }
 
 fn main() {
-    crate::server::network::connect();
+    crate::analytics::metrics::record();
 }
 ```
 

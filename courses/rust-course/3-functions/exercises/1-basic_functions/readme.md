@@ -7,13 +7,13 @@ Functions are declared with `fn`. In Rust, the last expression in a function can
 Example:
 
 ```rust
-fn get_greeting() -> String {
-    String::from("Welcome to Textio!")
+fn service_name() -> String {
+    String::from("Textio Gateway")
 }
 
 fn main() {
-    let greeting = get_greeting();
-    println!("{}", greeting);
+    let name = service_name();
+    println!("{}", name);
 }
 ```
 

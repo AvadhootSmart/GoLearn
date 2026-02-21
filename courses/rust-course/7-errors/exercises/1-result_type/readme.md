@@ -7,14 +7,14 @@ Rust uses `Result<T, E>` to represent operations that can succeed (`Ok(T)`) or f
 Example:
 
 ```rust
-fn read_config() -> Result<String, String> {
-    Ok(String::from("config loaded"))
+fn parse_port() -> Result<u16, String> {
+    Ok(8080)
 }
 
 fn main() {
-    match read_config() {
-        Ok(value) => println!("Success: {}", value),
-        Err(err) => println!("Error: {}", err),
+    match parse_port() {
+        Ok(port) => println!("Port: {}", port),
+        Err(problem) => println!("Error: {}", problem),
     }
 }
 ```

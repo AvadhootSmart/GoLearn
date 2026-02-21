@@ -8,19 +8,19 @@ Example:
 
 ```rust
 fn main() {
-    let numbers = vec![1, 2, 3];
-    let added_one: Vec<i32> = numbers
+    let prices = vec![10, 20, 30];
+    let discounted: Vec<i32> = prices
         .iter()
-        .map(|n| n + 1)
+        .map(|p| p - 1)
         .collect();
 
-    println!("{:?}", added_one);
+    println!("{:?}", discounted);
 }
 ```
 
 Nuances:
 
-- `.iter()` yields references (`&i32`) for each item.
+- `.iter()` yields references (`&i32`) for each item, so the original vector is not consumed.
 - `map` transforms each element and returns a new iterator.
 - `collect` materializes the final collection and often needs a target type.
 

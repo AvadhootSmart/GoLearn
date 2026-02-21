@@ -8,8 +8,8 @@ Example debugging loop:
 
 ```rust
 fn main() {
-    let message = "Textio online";
-    println!("{}", message);
+    let status = "Server boot complete";
+    println!("{}", status);
 }
 ```
 

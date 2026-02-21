@@ -8,12 +8,12 @@ Example:
 
 ```rust
 fn main() {
-    let server_name = "Textio"; // immutable
-    let mut online_users = 0;    // mutable
+    let app_name = "Notifier"; // immutable
+    let mut retry_count = 1;      // mutable
 
-    online_users = 1;
+    retry_count = 2;
 
-    println!("{} has {} users online", server_name, online_users);
+    println!("{} retried {} times", app_name, retry_count);
 }
 ```
 

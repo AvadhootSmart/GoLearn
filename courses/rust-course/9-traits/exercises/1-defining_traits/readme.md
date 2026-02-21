@@ -11,11 +11,11 @@ trait Summary {
     fn summarize(&self) -> String;
 }
 
-struct NewsArticle;
+struct Notification;
 
-impl Summary for NewsArticle {
+impl Summary for Notification {
     fn summarize(&self) -> String {
-        String::from("Article summary")
+        String::from("Notification summary")
     }
 }
 ```

@@ -8,13 +8,13 @@ Example:
 
 ```rust
 fn main() {
-    let mut user_ids: Vec<i32> = Vec::new();
-    user_ids.push(101);
-    user_ids.push(102);
-    user_ids.push(103);
+    let mut scores: Vec<i32> = Vec::new();
+    scores.push(10);
+    scores.push(20);
+    scores.push(30);
 
-    for id in user_ids {
-        println!("{}", id);
+    for score in &scores {
+        println!("{}", score);
     }
 }
 ```

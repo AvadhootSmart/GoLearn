@@ -12,15 +12,15 @@ use std::time::Duration;
 
 fn main() {
     let handle = thread::spawn(|| {
-        for i in 1..=3 {
-            println!("hi number {} from the spawned thread!", i);
-            thread::sleep(Duration::from_millis(1));
+        for i in 1..=2 {
+            println!("worker step {}", i);
+            thread::sleep(Duration::from_millis(2));
         }
     });
 
-    for i in 1..=3 {
-        println!("hi number {} from the main thread!", i);
-        thread::sleep(Duration::from_millis(1));
+    for i in 1..=2 {
+        println!("main step {}", i);
+        thread::sleep(Duration::from_millis(2));
     }
 
     handle.join().unwrap();

@@ -7,15 +7,15 @@ Enums let you represent values that can be exactly one of several variants.
 Example:
 
 ```rust
-enum MessageStatus {
-    Sent,
-    Failed,
+enum ConnectionState {
+    Connected,
+    Disconnected,
 }
 
-fn print_status(status: MessageStatus) {
-    match status {
-        MessageStatus::Sent => println!("Message was sent"),
-        MessageStatus::Failed => println!("Message failed"),
+fn print_state(state: ConnectionState) {
+    match state {
+        ConnectionState::Connected => println!("Connected"),
+        ConnectionState::Disconnected => println!("Disconnected"),
     }
 }
 ```
@@ -24,7 +24,7 @@ Nuances:
 
 - `match` on enums is exhaustive; every variant must be handled.
 - Enums are ideal for state machines and API outcomes.
-- Variant names are namespaced (e.g., `MessageStatus::Sent`).
+- Variant names are namespaced (e.g., `ConnectionState::Connected`).
 
 ## Exercise task
 

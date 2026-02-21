@@ -10,11 +10,11 @@ Example:
 
 ```rust
 fn main() {
-    let s1 = String::from("hello");
-    let s2 = s1; // ownership moved from s1 to s2
+    let api_key = String::from("abc123");
+    let active_key = api_key; // ownership moved to active_key
 
-    println!("{}", s2);
-    // println!("{}", s1); // compile error: s1 no longer owns the value
+    println!("{}", active_key);
+    // println!("{}", api_key); // compile error: api_key was moved
 }
 ```
 

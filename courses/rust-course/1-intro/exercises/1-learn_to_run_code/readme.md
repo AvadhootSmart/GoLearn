@@ -12,7 +12,7 @@ Example:
 
 ```rust
 fn main() {
-    println!("starting Textio server");
+    println!("loading configuration");
 }
 ```
 
