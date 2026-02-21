@@ -1,8 +1,34 @@
 # Structs in Rust
 
-A struct, or structure, is a custom data type that lets you package together and name multiple related values that make up a meaningful group. If you're familiar with an object-oriented language, a struct is like an object's data attributes.
+## Concept first: modeling related data
 
-## Assignment
+A `struct` groups related fields under one named type. This is useful when several values represent one concept.
+
+Example:
+
+```rust
+struct Account {
+    id: u32,
+    email: String,
+}
+
+fn main() {
+    let account = Account {
+        id: 42,
+        email: String::from("dev@example.com"),
+    };
+
+    println!("{}", account.email);
+}
+```
+
+Nuances:
+
+- Field names are required when constructing a normal struct.
+- Field access uses dot syntax (`account.email`).
+- Struct fields can mix types (numbers, strings, booleans, etc.) as long as each field type is explicit.
+
+## Exercise task
 
 1. Define a struct `Message` with two fields: `body` (a `String`) and `recipient` (a `String`).
 2. In `main`, instantiate a `Message` with `body` set to `"Hey there"` and `recipient` to `"555-0199"`.

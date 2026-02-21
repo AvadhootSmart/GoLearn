@@ -1,11 +1,35 @@
 # Welcome to "Learn Rust"
 
-_This course assumes you're familiar with programming basics. If you're new to coding check out a beginner Python course first._
+_This course assumes you're familiar with programming basics. If you're new to coding, consider starting with a beginner-friendly programming course first._
 
 ![rust logo](https://rust-lang.org/logos/rust-logo-blk.svg)
 
-## Booting up the "Textio" server
+## Concept first: printing output in Rust
 
-All the code you write in this course is part of a larger product: an SMS API called "Textio". Textio sends text messages over the internet, similar to Twilio.
+In Rust, `println!` is a macro used to print text to standard output. You can think of it as the quickest way to verify your code is running and to communicate program state.
 
-Assignment: log `starting Textio server` to the console instead of `hello world`.
+Example:
+
+```rust
+fn main() {
+    println!("loading configuration");
+}
+```
+
+A few nuances:
+
+- `println!` ends output with a newline.
+- String text goes in double quotes.
+- The `!` matters: `println!` is a macro, not a normal function.
+
+## Exercise task
+
+All the code in this course represents parts of an SMS API called **Textio**.
+
+Update the existing program so it logs:
+
+`starting Textio server`
+
+instead of:
+
+`hello world`.
