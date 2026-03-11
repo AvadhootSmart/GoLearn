@@ -1,0 +1,39 @@
+=== 'static Lifetime Demo ===
+
+API Version: 2.0.0
+API Base URL: https://api.textio.com/v2
+Max SMS Length: 160
+
+=== Error Messages ===
+Error 100: Invalid phone number format
+Error 101: Message cannot be empty
+Error 102: Message exceeds maximum length
+Error 999: Unknown error
+
+=== HTTP Status ===
+200: OK
+404: Not Found
+500: Internal Server Error
+
+=== Message IDs ===
+ID 1: msg-000000
+ID 2: msg-000001
+ID 3: msg-000002
+
+=== API Config ===
+Description: Textio API v2.0.0 at https://api.textio.com/v2
+
+=== Static Message ===
+ID: msg-000003, Status: sent, Body: Hello, World!
+
+=== Handler Registry ===
+Registered handlers: ["uppercase", "reverse"]
+Uppercase result: HELLO
+Reverse result: olleh
+
+=== 'static Bounds ===
+Processed: 42
+Processed: literal is static
+Processed: owned is ok
+Storing permanently: "This string literal is 'static"
+Storing permanently: "Owned String is also 'static"

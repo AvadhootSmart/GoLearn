@@ -1,12 +1,14 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { logger } from "hono/logger";
 import { readdir, readFile } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
 
 const app = new Hono();
 
-// CORS for frontend
+app.use("*", logger());
+
 app.use(
   "/*",
   cors({
@@ -91,6 +93,7 @@ app.get("/api/courses", async (c) => {
 
     return c.json(courses);
   } catch (error) {
+    console.error("Failed to read courses:", error);
     return c.json({ error: "Failed to read courses" }, 500);
   }
 });
@@ -118,6 +121,7 @@ app.get("/api/courses/:courseId/chapters", async (c) => {
 
     return c.json(chapters);
   } catch (error) {
+    console.error("Failed to read chapters:", error);
     return c.json({ error: "Failed to read chapters" }, 500);
   }
 });
@@ -159,6 +163,7 @@ app.get("/api/courses/:courseId/chapters/:chapterId/exercises", async (c) => {
     exercises.sort((a, b) => a.order - b.order);
     return c.json(exercises);
   } catch (error) {
+    console.error("Failed to read exercises:", error);
     return c.json({ error: "Failed to read exercises" }, 500);
   }
 });
@@ -219,6 +224,7 @@ app.get(
 
       return c.json(exercise);
     } catch (error) {
+      console.error("Failed to read exercise:", error);
       return c.json({ error: "Failed to read exercise" }, 500);
     }
   },
@@ -250,6 +256,7 @@ app.get(
         return c.json({ error: "No solution available" }, 404);
       }
     } catch (error) {
+      console.error("Failed to read solution:", error);
       return c.json({ error: "Failed to read solution" }, 500);
     }
   },
@@ -341,6 +348,7 @@ app.post("/api/execute", async (c) => {
 
     return c.json(result);
   } catch (error) {
+    console.error("Failed to execute code:", error);
     return c.json(
       {
         error: "Failed to execute code",

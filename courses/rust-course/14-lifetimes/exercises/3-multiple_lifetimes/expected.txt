@@ -1,0 +1,23 @@
+=== Multiple Lifetimes Demo ===
+
+API Key: sk-textio-12345
+Max Length: 160
+
+Processed: success=true, original='Hello from Textio!'
+Error: Message too long
+Cached: [US] Hello from Textio!
+
+=== Addressed Message ===
+From: 5551234567 To: 5559876543
+Body: Hello!
+
+=== Contextual Message ===
+Message: Test message, User: user123, App: production
+
+=== Independent Lifetimes ===
+Combined: Hello, World!
+First non-empty: second
+Content: main content
+
+=== Generic Container ===
+Contained value: 42

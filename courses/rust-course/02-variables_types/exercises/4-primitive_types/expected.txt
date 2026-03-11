@@ -1,0 +1,57 @@
+=== Signed Integers ===
+i8: -10
+i16: -1000
+i32: -100000
+i64: -10000000000
+i128: -100000000000000000000
+isize: -100
+
+=== Unsigned Integers ===
+u8: 255
+u16: 60000
+u32: 4000000000
+u64: 18000000000000000000
+u128: 340282366920938463463374607431768211455
+usize: 100
+
+=== Floating-Point Types ===
+f32: 3.14159
+f64: 3.141592653589793
+Cost per SMS: $0.05
+Monthly revenue: $15000.50
+
+=== Boolean and Character Types ===
+is_delivered: true
+is_premium: false
+has_attachment: false
+message_type: S
+priority: H
+emoji: ✓
+
+=== String Slice Type ===
+API: https://api.textio.io/v2
+Default: Your code is: 123456
+Status: Message delivered successfully
+
+=== Type Casting ===
+u8 255 -> u32 255
+i32 -100000 -> i64 -100000
+f64 3.99 -> i32 3 (truncated)
+char 'A' -> u32 65 (Unicode)
+u32 128512 -> char '😀' (Unicode)
+
+=== Overflow Handling ===
+255 wrapping_add(1) = 0
+255 saturating_add(1) = 255
+255 checked_add(1) = None
+255 overflowing_add(1) = (0, true)
+
+=== Debug Printing ===
+Debug number: 42
+Debug text: "Hello, Textio!"
+Debug flag: true
+[complete.rs:107:5] debug_number = 42
+[complete.rs:108:5] debug_text = "Hello, Textio!"
+[complete.rs:109:5] debug_flag = true
+[complete.rs:112:18] debug_number * 2 = 84
+Computed: 84

@@ -1,0 +1,30 @@
+=== Textio Channels Demo ===
+
+--- Basic Channel ---
+Received: Hello from Textio!
+
+--- Multiple Producers ---
+Got: Message from worker 0
+Got: Message from worker 1
+Got: Message from worker 2
+
+--- Message Pipeline ---
+Final: [Textio] Hello [SENT]
+Final: [Textio] World [SENT]
+Final: [Textio] Test [SENT]
+
+--- Worker Pool ---
+Worker 0 processed job 1
+Worker 1 processed job 2
+Worker 2 processed job 3
+Job 1 status: delivered
+Job 2 status: delivered
+Job 3 status: delivered
+Worker 0 processed job 4
+Worker 1 processed job 5
+Job 4 status: delivered
+Job 5 status: delivered
+
+Note: The order of messages in "Multiple Producers" may vary.
+The order of worker assignments and job processing in "Worker Pool"
+may vary due to concurrent execution.

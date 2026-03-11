@@ -1,0 +1,10 @@
+Max body length: 160
+Basic message: Message { to: "+15550001", from: "+15550002", body: "Hello from Textio!", priority: 1 }
+Empty message: Message { to: "", from: "", body: "", priority: 1 }
+Notification: Message { to: "+15550001", from: "Textio", body: "Your code is 12345", priority: 1 }
+Urgent message: Message { to: "+15550001", from: "+15550002", body: "URGENT: Server down!", priority: 5 }
+Priority 3 message: Message { to: "+15550001", from: "+15550002", body: "Medium priority", priority: 3 }
+Priority 10 (capped): Message { to: "+15550001", from: "+15550002", body: "Over max priority", priority: 5 }
+Short message valid: true
+Long message valid: false
+Remaining chars: 155

@@ -1,0 +1,26 @@
+=== Part 1: Message Handler with Stats ===
+
+Stats: processed=3, failed=1, bytes=40
+Processed through trait: 4
+
+=== Part 2: Lazy Configuration Cache ===
+
+Loaded: false
+Config: api_key=default_key, endpoint=https://api.textio.io
+Loaded: true, load_count: 1
+Load count after second get: 1
+After invalidate, loaded: false
+Load count: 2
+
+=== Part 3: Event System ===
+
+Listeners: 2
+
+=== Part 4: Graph with Mutable Edges ===
+
+Nodes: 4, Total edges: 4
+A edges: 2
+A has edge to B: true
+A has edge to D: false
+Path from A to D: [1, 2, 3, 4]
+After removing A->C, A edges: 1

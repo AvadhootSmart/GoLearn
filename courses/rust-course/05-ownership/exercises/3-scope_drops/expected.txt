@@ -1,0 +1,75 @@
+=== Exercise 1: Basic Drop ===
+
+Message created
+  [DROP] Message 1 to 'Alice': 'Hello'
+
+=== Exercise 2: Drop Order ===
+
+Created messages A, B, C
+  [DROP] Message 3 to 'C': 'Message C'
+  [DROP] Message 2 to 'B': 'Message B'
+  [DROP] Message 1 to 'A': 'Message A'
+
+=== Exercise 3: Nested Scopes ===
+
+  [DROP] Message 20 to 'Inner': 'Inner message'
+Inner scope ending
+Outer scope continuing
+  [DROP] Message 10 to 'Outer': 'Outer message'
+
+=== Exercise 4: Explicit Drop ===
+
+Before explicit drop
+  [DROP] Message 100 to 'Explicit': 'Will be dropped early'
+After explicit drop
+
+=== Exercise 5: Vec Drop Order ===
+
+Messages in vec: 3 messages
+  [DROP] Message 3 to 'C': 'Third'
+  [DROP] Message 2 to 'B': 'Second'
+  [DROP] Message 1 to 'A': 'First'
+
+=== Exercise 6: Complex Nested Structure ===
+
+Pool and queue created
+  [DROP] Message queue 'OutboundQueue' cleared
+  [DROP] Connection pool 'TextioPool' shutting down
+  [DROP] Connection 2 closed
+  [DROP] Connection 1 closed
+
+=== Exercise 7: Shadowing and Drop ===
+
+  [DROP] Message 1 to 'A': 'First'
+  [DROP] Message 2 to 'B': 'Second'
+Created three shadowed messages, current id: 3
+
+=== Exercise 8: Early Return Drops ===
+
+  Entering process_batch(true)
+  Processing messages normally
+  [DROP] Message 2 to 'Bob': 'World'
+  [DROP] Message 1 to 'Alice': 'Hello'
+  Entering process_batch(false)
+  Early return!
+  [DROP] Message 2 to 'Bob': 'World'
+  [DROP] Message 1 to 'Alice': 'Hello'
+
+=== Exercise 9: Reassignment Drops Old Value ===
+
+Created message 1
+  [DROP] Message 1 to 'Original': 'Original message'
+Reassigned to message 2
+
+=== Exercise 10: Real Textio Scenario ===
+
+Processing 3 messages with pool
+  [DROP] Message 3 to '+5555555555': 'Message 3'
+  [DROP] Message 2 to '+0987654321': 'Message 2'
+  [DROP] Message 1 to '+1234567890': 'Message 1'
+  [DROP] Connection pool 'ProductionPool' shutting down
+  [DROP] Connection 3 closed
+  [DROP] Connection 2 closed
+  [DROP] Connection 1 closed
+
+=== End of main ===

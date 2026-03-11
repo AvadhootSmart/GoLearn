@@ -1,0 +1,30 @@
+=== Textio String Slices Exercise ===
+
+Test 1: Extract Area Code
+Phone: +1-555-123-4567 -> Area: 555
+Phone: +44-20-7946-0958 -> Area: 20
+
+Test 2: Message Preview
+Full: Hello! This is a long message from Textio SMS API.
+Preview (20 chars): Hello! This is a lon
+Preview (10 chars): Hello! Thi
+Preview (100 chars): Hello! This is a long message from Textio SMS API.
+
+Test 3: Find Keyword
+Message: URGENT: Your package will arrive tomorrow at 3pm
+'URGENT' at: Some(0)
+'package' at: Some(14)
+'missing' at: None
+
+Test 4: Safe Slicing
+Text: Hello, Textio!
+Safe slice [0..5]: Some("Hello")
+Safe slice [7..13]: Some("Textio")
+Safe slice [0..100]: None
+Safe slice [5..3]: None
+
+Test 5: Slice Flexibility
+Received slice: Hello from literal (length: 18)
+Received slice: Hello from String (length: 17)
+Received slice: Using as_str (length: 13)
+Partial slice: Hello

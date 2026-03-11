@@ -1,0 +1,26 @@
+=== Textio Thread Demo ===
+
+--- Basic Threads ---
+Worker thread started
+Thread completed successfully
+Main thread continues after join
+
+--- Move Closures ---
+Sending message 42: Hello from Textio!
+
+--- Scoped Threads ---
+Processing: Welcome to Textio!
+Processing: Your verification code is 123456
+Processing: Thank you for using our service
+All scoped threads completed
+
+--- Parallel Message Processing ---
+Results:
+  Sent: Message content 0
+  Sent: Message content 1
+  Sent: Message content 2
+  Sent: Message content 3
+  Sent: Message content 4
+
+Note: The order of "Processing:" lines in scoped threads may vary
+due to concurrent execution. The order of "Sent:" results may also vary.

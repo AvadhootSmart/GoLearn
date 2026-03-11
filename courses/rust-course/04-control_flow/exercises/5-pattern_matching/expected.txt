@@ -1,0 +1,77 @@
+=== Textio Advanced Pattern Matching ===
+
+--- Task 1: Message Validation ---
+Alice -> Bob: Valid: 21 chars from Alice to Bob
+Charlie -> Charlie: Self-message, allowed
+Diana -> Eve: Error: Empty message
+Frank -> Grace: Error: Too long (200 chars)
+Heidi -> Ivan: Valid: 5 chars from Heidi to Ivan
+
+--- Task 2: HTTP Status Classification ---
+Success (200)
+Success (201)
+Client error: 400
+Rate limited, retry in 60s (short)
+Rate limited, retry in 300s (long)
+Server error: 503
+Server error: 500
+
+--- Task 3: Message Processing ---
+URGENT delivered: 1 from alice@textio.com
+Failed: 2 to user@test.com
+URGENT pending: 3
+
+--- Task 4: Coordinate Analysis ---
+Origin
+On Y axis at 5
+On X axis at 5
+On diagonal at (3, 3)
+On diagonal at (-2, -2)
+Far from origin: (10, 20)
+
+--- Task 5: Event Handling ---
+Sent 1001 to bob@example.com
+Client error 404 for 1002
+Server error 500 for 1003
+alice logged in from mobile
+Admin login from desktop
+alice logged out
+URGENT: High CPU
+Warning: Disk space low
+
+--- Task 6: Score Classification ---
+Excellent: 95
+Good: 82
+Average: 75
+Below Average: 68
+Failing: 55
+Failing: 42
+Invalid score: 105
+
+--- Task 7: Nested Matching ---
+Premium US user: Alice in New York
+UK user: Bob in London
+Free US user: Charlie
+
+--- Task 8: Complex Validation ---
+Power user alice: 5000 messages
+Active user bob: 500 messages
+Unverified user charlie
+Active user diana: 10000 messages
+New user eve
+
+--- Task 9: Array Patterns ---
+Empty sequence
+Single: 1
+Pair: 1, 2
+Starts with 1, ends with 3
+Starts with 1, ends with 5
+
+--- Task 10: Result Handling ---
+OK: Success
+Client error 404: Not found
+Timeout error: Network timeout
+Server error 500: Server error
+Error: Invalid credentials
+
+=== Pattern Matching Complete ===

@@ -1,0 +1,17 @@
+=== Tokio Runtime Fundamentals ===
+
+1. Sequential vs Concurrent Execution:
+   Sequential: 150.Xms
+   Concurrent: 50.Xms
+   Speedup: ~3.0x
+
+2. Using join! for Concurrent Operations:
+   User: User 1
+   Messages: ["Message for user 1"]
+   Settings: Settings for user 1
+   Total time: 40.Xms
+
+3. Task Spawning:
+   Results: Task 1 complete, Task 2 complete
+
+=== Tokio basics demonstrated ===

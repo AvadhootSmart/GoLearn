@@ -1,0 +1,26 @@
+=== Textio: Dangling References Prevention ===
+
+Part 1: Returning References to Locals
+Hello, Textio User!
+
+Part 2: Scope Problems
+Reference: Scoped message
+
+Part 3: Message Factory
+Created: +15551234567 -> Welcome to Textio!
+
+Part 4: Message Cache
+Cached message: Message for key: welcome
+Cached again: Message for key: welcome
+
+Part 5: Static Lifetimes
+Error: An error occurred. Please try again.
+Static: This lives forever
+
+Part 6: Message Validation
+Message valid: true
+Verification code: 123456
+
+Part 7: Fixing Dangling References
+First word: Hello,
+Original: Hello, Textio World!

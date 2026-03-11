@@ -1,0 +1,17 @@
+=== Async Patterns for Textio ===
+
+1. Timeout Pattern:
+   Result: Ok(DeliveryResult { message_id: 1, success: true })
+
+2. select! - Racing Futures:
+   Winner: fast
+
+3. Async Channels:
+   Worker shutting down gracefully
+   Delivered message 1: true
+   Delivered message 2: true
+
+4. Cancellation with select!:
+   Task cancelled!
+
+=== Async patterns demonstrated ===

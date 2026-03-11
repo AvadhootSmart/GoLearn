@@ -1,0 +1,54 @@
+=== Textio Workspace Demo ===
+
+Workspace Structure:
+  textio-workspace/
+  ├── Cargo.toml (workspace)
+  ├── crates/
+  │   ├── textio-core/ (library crate)
+  │   ├── textio-cli/ (binary crate)
+  │   └── textio-server/ (binary crate)
+  └── shared/
+      └── textio-types/ (shared library)
+
+Shared Dependencies (workspace.dependencies):
+  - serde with derive feature
+  - serde_json
+
+Inter-crate Dependencies:
+  textio-cli depends on: textio-core, textio-types
+  textio-server depends on: textio-core, textio-types
+  textio-core depends on: textio-types
+
+To build the workspace:
+  cargo build --workspace
+
+To run the CLI:
+  cargo run -p textio-cli
+
+To test all crates:
+  cargo test --workspace
+
+=== CLI Demo ===
+=== Textio CLI ===
+
+Created message with ID: 1
+Status: Pending
+Message sent successfully!
+API format: {"id":1,"to":"+15551234567","body":"Hello from Textio CLI!","status":"Sent"}
+
+=== Server Demo ===
+=== Textio Server ===
+
+Processing 3 messages...
+
+Message 1 sent: Sent
+Message 2 sent: Sent
+Message 3 sent: Sent
+
+=== Workspace Benefits ===
+1. Shared Cargo.lock ensures version consistency
+2. Shared target/ directory reduces disk usage
+3. Shared dependencies reduce duplication
+4. Easier to manage related crates together
+
+Workspace configuration complete!

@@ -1,0 +1,41 @@
+=== Textio SMS API - Option Type Demo ===
+
+--- Finding Contacts ---
+Find 'alice': Some(Contact { name: "Alice Smith", phone: "5551234567", active: true })
+Find 'unknown': None
+Find 'ALICE' (case insensitive): Some(Contact { name: "Alice Smith", phone: "5551234567", active: true })
+
+--- Checking Option State ---
+alice.is_some(): true
+unknown.is_none(): true
+
+--- Finding Active Contacts ---
+Active 'alice': Some(Contact { name: "Alice Smith", phone: "5551234567", active: true })
+Active 'inactive' (should be None): None
+
+--- Message Status with map() ---
+Status of message 1: Some("delivered")
+Status of message 99: None
+
+--- Formatting Messages ---
+Custom template: Hello, Alice Smith! Welcome to Textio.
+Default template: Hi Alice Smith!
+
+--- Phone with Default ---
+Phone from Some: 5551234567
+Phone from None: ''
+
+--- Find and Send (and_then + filter) ---
+Send to alice: Some("Hi Alice Smith!")
+Send to unknown: None
+Send to inactive: None
+
+--- Converting Option to Result ---
+Some contact as Result: Ok(Contact { name: "Alice Smith", phone: "5551234567", active: true })
+None contact as Result: Err("Contact not found")
+
+--- unwrap_or_default() ---
+Some phone: 5551112222
+None phone: ''
+
+=== Exercise Complete ===

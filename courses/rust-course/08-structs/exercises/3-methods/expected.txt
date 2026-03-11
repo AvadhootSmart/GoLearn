@@ -1,0 +1,7 @@
+Is long: false
+Recipient: +15550001
+Character count: 45
+Attempts: 2
+Is long after append: false
+Delivered: true
+Full message: Message { to: "+15550001", from: "+15550002", body: "Hello, this is a test message from Textio! More text.", delivered: true, attempts: 2 }

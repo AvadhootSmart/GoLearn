@@ -1,0 +1,39 @@
+=== Textio Slice Functions Exercise ===
+
+Test 1: Count by Status
+Status counts:
+  Delivered: 4
+  Sent: 1
+  Pending: 1
+  Failed: 2
+
+Test 2: Filter Short Messages
+Messages shorter than 10 chars:
+  ID 1: "Hi" (2 chars)
+  ID 4: "OK" (2 chars)
+  ID 6: "Thanks!" (7 chars)
+Found 3 short messages
+
+Test 3: Find Longest Message
+Longest: ID 3 - "Your verification code is 123456" (32 chars)
+
+Test 4: Group by Recipient Prefix
+Prefix +1: 4 messages
+  ID 1 to +1-555-0100
+  ID 2 to +1-555-0101
+  ID 3 to +1-555-0102
+  ID 4 to +1-555-0103
+  ID 7 to +1-555-0106
+Prefix +4: 3 messages
+  ID 5 to +44-555-0104
+  ID 6 to +44-555-0105
+  ID 8 to +44-555-0107
+
+Test 5: Function Flexibility
+Sum of array: 15
+Sum of vector: 150
+Sum of slice: 60
+Longest in array: Some("hello")
+Longest in vector: Some("foo")
+Before sort: [3, 1, 4, 1, 5, 9, 2, 6]
+After sort: [1, 1, 2, 3, 4, 5, 6, 9]

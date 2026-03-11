@@ -1,0 +1,10 @@
+Sender: +1-555-0100
+Recipient: +1-555-0200
+Message: Your verification code is 42
+Characters: 28
+Delivered: false
+API Endpoint: https://api.textio.io/v2/send
+Max Length: 160
+Timeout: 30s
+[complete.rs:33:5] character_count = 28
+[complete.rs:34:5] max_length = 160

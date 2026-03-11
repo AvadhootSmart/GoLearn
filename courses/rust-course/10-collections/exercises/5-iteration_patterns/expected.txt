@@ -1,0 +1,24 @@
+Delivered messages: [1, 2, 5]
+Unique recipients: {"+3333333333", "+1111111111", "+2222222222", "+4444444444"}
+Status counts: {"pending": 1, "failed": 1, "delivered": 3}
+ID-recipient pairs: [(1, "+1111111111"), (2, "+2222222222"), (3, "+1111111111"), (4, "+3333333333"), (5, "+4444444444")]
+First message > 15 chars: Some(2)
+Has failed messages: true
+All delivered: false
+Total characters: 83
+First failed position: Some(2)
+Delivered count: 3, Not delivered count: 2
+Merged message count: 6
+First 3 IDs: [1, 2, 3]
+After skip 2 IDs: [3, 4, 5]
+ID 1 body: Some("Hello there!")
+Bodies containing 'message': ["This is a longer message body", "Another delivered message"]
+Stats: MessageStats { total: 5, delivered: 3, failed: 1, pending: 1, total_characters: 83, unique_recipients: 4 }
+Flattened count: 3
+Formatted messages:
+  1. Message to +1111111111: Hello there!
+  2. Message to +2222222222: This is a longer message body
+  3. Message to +1111111111: Duplicate recipient
+  4. Message to +3333333333: Short
+  5. Message to +4444444444: Another delivered message
+Parsed IDs: [1, 42, 100]

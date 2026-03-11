@@ -1,0 +1,26 @@
+=== Testing send_message ===
+Sending to: +15551234567
+Content: Hello Textio!
+Sending to: +15559998888
+Content: Premium message content
+
+=== Testing validate_and_send ===
+Validated!
+Sending to: +15551234567
+Content: Hello Textio!
+Message sent!
+
+=== Testing process_batch ===
+Total cost: $0.26
+Messages processed: 2
+
+=== Testing MessageProcessor ===
+[PROC-001] Processing message for +15551234567
+[PROC-001] Processing message for +15559998888
+Total processed: 2
+
+=== Testing estimate_total_cost ===
+Estimated total cost: $0.89
+
+=== Testing clone_and_validate ===
+Cloned message content: Hello Textio!

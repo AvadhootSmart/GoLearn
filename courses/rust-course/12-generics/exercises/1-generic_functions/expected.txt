@@ -1,0 +1,23 @@
+First number: Some(10)
+Last number: Some(50)
+First SMS: Some(SmsMessage { id: 1, content: "Hello", recipient: "+1234567890" })
+Last SMS: Some(SmsMessage { id: 2, content: "World", recipient: "+0987654321" })
+Pair: ("Textio", 42)
+Message with status: (SmsMessage { id: 1, content: "Test", recipient: "+1111111111" }, "delivered")
+Swapped: ("hello", 100)
+Max priority: Some(9)
+Min priority: Some(1)
+Max timestamp: Some(1640000000)
+Min timestamp: Some(1620000000)
+Contains +1234567890: true
+Contains +9999999999: false
+Value: Hello from Textio!
+Value: 42
+Value: 3.14159
+Success response: ApiResponse { success: true, data: Some(SmsMessage { id: 100, content: "Your code is 123456", recipient: "+1234567890" }), error_message: None }
+Error response: ApiResponse { success: false, data: None, error_message: Some("Invalid API key") }
+Identity result: SmsMessage { id: 1, content: "Original", recipient: "+1234567890" }
+
+--- Turbofish Examples ---
+Explicit type response: ApiResponse { success: true, data: Some(200), error_message: None }
+Explicit identity: explicit

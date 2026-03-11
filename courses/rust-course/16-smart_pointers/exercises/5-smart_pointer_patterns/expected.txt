@@ -1,0 +1,34 @@
+=== Part 1: Doubly-Linked Message Thread ===
+
+Thread count: 1
+Total messages: 4
+Root reply count: 2
+Reply1 depth: 1
+Reply3 depth: 2
+Reply3's parent: Thanks!
+Reply3's ancestors: ["Thanks!", "Welcome to Textio!"]
+
+=== Part 2: Observable State Manager ===
+
+API key: Some("newkey456")
+Observer count: 1
+  api_key: None -> secret123
+  endpoint: None -> https://api.textio.io
+  api_key: Some("secret123") -> newkey456
+
+=== Part 3: Message Pool ===
+
+Pool: available=3, in_use=0
+After allocations: available=1, in_use=2
+msg3: Some(("Test", "+333"))
+msg4: None
+After release: available=2
+
+=== Part 4: LRU Cache ===
+
+Size: 3
+After inserting d, size: 3
+Contains a: true
+Contains c: false
+Entry 'a' access count: 4
+Stats: hits=5, misses=2, rate=71.43%

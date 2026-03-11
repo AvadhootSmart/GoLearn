@@ -1,0 +1,32 @@
+=== Part 1: Thread-Safe Configuration ===
+
+Config ref count: 2
+[Worker 0] Processing 'Hello' via https://api.textio.io
+[Worker 1] Processing 'World' via https://api.textio.io
+[Worker 2] Processing 'Test' via https://api.textio.io
+[Worker 3] Processing 'Textio' via https://api.textio.io
+
+=== Part 2: Parallel Message Processor ===
+
+Pending messages: 4
+[Worker 1] Sent to +444: Fourth
+[Worker 0] Sent to +333: Third
+[Worker 1] Sent to +222: Second
+[Worker 0] Sent to +111: First
+
+Stats: processed=4, failed=0, bytes=22
+
+=== Part 3: Thread-Safe Cache ===
+
+Cache size: 2
+Worker 1 reads: [Some("Hello"), Some("World"), None]
+Worker 2 reads: [Some("Hello"), None]
+Cache stats: hits=3, misses=2, rate=60.00%
+
+=== Part 4: Circuit Breaker ===
+
+Initial state: Closed
+After failures: Open
+Service available: false
+After reset: HalfOpen
+After successes: Closed

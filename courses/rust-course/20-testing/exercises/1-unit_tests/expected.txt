@@ -1,0 +1,25 @@
+$ cargo test
+
+running 21 tests
+test tests::test_calculate_cost_above_free_tier ... ok
+test tests::test_calculate_cost_at_free_limit ... ok
+test tests::test_calculate_cost_free_tier ... ok
+test tests::test_calculate_cost_multiple_tiers ... ok
+test tests::test_calculate_cost_zero ... ok
+test tests::test_char_count ... ok
+test tests::test_char_count_unicode ... ok
+test tests::test_format_message_for_api ... ok
+test tests::test_format_message_for_api_delivered ... ok
+test tests::test_format_message_for_api_pending ... ok
+test tests::test_is_valid_empty_body ... ok
+test tests::test_is_valid_empty_to ... ok
+test tests::test_is_valid_no_plus_prefix ... ok
+test tests::test_is_valid_true ... ok
+test tests::test_new_message_has_pending_status ... ok
+test tests::test_validate_phone_empty ... ok
+test tests::test_validate_phone_no_plus ... ok
+test tests::test_validate_phone_too_long ... ok
+test tests::test_validate_phone_too_short ... ok
+test tests::test_validate_phone_valid ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out

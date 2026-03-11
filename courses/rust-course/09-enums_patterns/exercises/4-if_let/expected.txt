@@ -1,0 +1,60 @@
+=== extract_sms_body ===
+SMS body: Some("Hello!")
+MMS body: None
+
+=== extract_mms_url ===
+MMS URL: https://example.com/img.jpg
+SMS URL: Not an MMS
+
+=== get_scheduled_time ===
+Scheduled time: 1700000000
+SMS time: 0
+
+=== validate_scheduled ===
+Valid (min 1000, current 1000): Ok(())
+Invalid (min 1000, current 1500): Err("Send time must be at least 1000 seconds in the future")
+SMS (min 1000, current 1000): Err("Not a scheduled message")
+
+=== get_user_phone ===
+With phone: Ok("+1555111111")
+Without phone: Err("User has no phone number")
+
+=== process_send_result ===
+Success: Message msg_123 sent successfully in 1 segment(s)
+Failed: 
+=== count_successful_messages ===
+Success count: 2
+
+=== find_first_success ===
+First success in mixed: Some("msg_1")
+First success in all failed: None
+
+=== extract_all_bodies ===
+All SMS bodies: ["First", "Third"]
+
+=== is_success / has_phone ===
+is_success(success): true
+is_success(failed): false
+has_phone(with phone): true
+has_phone(no phone): false
+
+=== classify_and_handle ===
+Multi-part: Multi-part message sent
+Single: Message sent
+Server error: Server error
+Client error: Client error
+
+=== extract_recipient_info ===
+SMS info: Some(("+1555123456", false))
+MMS info: Some(("+1555987654", true))
+Scheduled info: None
+
+=== process_nested_option ===
+Some(Some("value")): Some("value")
+Some(None): None
+None: None
+
+=== process_user_message ===
+User 1: Ok("Message 'Hello' queued for +1555111111 (user: alice)")
+User 2: Err("User has no phone number")
+User 3: Err("User 3 not found")

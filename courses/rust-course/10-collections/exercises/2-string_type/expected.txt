@@ -1,0 +1,22 @@
+To: +1234567890
+From: +0987654321
+Body: Hello, World!
+Preview (5 chars): Hello
+Byte length: 13
+Char count: 13
+With signature: Hello, World! - Textio
+With char appended: Hello, World! - Textio!
+Truncated to 15 chars: Hello, World! -
+Censored: The secret word is *****
+Phone list: +1234567890, +0987654321, +1122334455
+Built message: Hello, Alice! Your package has been delivered!
+Concatenated: Hello, World!
+Empty string capacity: 100
+After push capacity: 100
+Split parts: ["one", "two", "three", "four"]
+Trimmed: 'hello world'
+Has +1 code: true
+Has +44 code: false
+Unicode message: Hello 🎉 日
+Unicode byte length: 14
+Unicode char count: 10

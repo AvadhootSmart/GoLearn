@@ -1,0 +1,117 @@
+# Expected Output for Exercise 2: Serde and JSON
+
+## Running `cargo run` with complete.rs
+
+```
+API Response: SendResponse { message_id: "msg_abc123", status: "sent", segments: 2, error: None }
+
+Send Request JSON: {"to":"+1234567890","message":"Hello, World!","sender_id":"Textio"}
+
+Webhook Event: MessageDelivered { message_id: "msg_abc123", timestamp: "2024-01-15T10:35:00Z", recipient: "+1234567890" }
+
+Exported Contacts:
+{
+  "version": "1.0",
+  "contacts": [
+    {
+      "name": "John Doe",
+      "phone": "+1234567890",
+      "email": "john@example.com",
+      "subscribed": true
+    },
+    {
+      "name": "Jane Smith",
+      "phone": "+0987654321",
+      "subscribed": false
+    }
+  ],
+  "exported_at": "2024-01-15T10:30:00Z"
+}
+
+App name: Textio
+
+Merged config: {"api_key":"secret","debug":true,"timeout":60}
+```
+
+## Running `cargo test`
+
+```
+running 8 tests
+test tests::test_parse_api_response ... ok
+test tests::test_create_send_request ... ok
+test tests::test_create_send_request_without_sender ... ok
+test tests::test_parse_webhook_sent ... ok
+test tests::test_parse_webhook_delivered ... ok
+test tests::test_export_import_contacts ... ok
+test tests::test_parse_dynamic ... ok
+test tests::test_merge_json ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## JSON Examples
+
+### API Response Format
+```json
+{
+  "messageId": "msg_abc123",
+  "status": "sent",
+  "segments": 2
+}
+```
+
+### Send Request Format
+```json
+{
+  "to": "+1234567890",
+  "message": "Hello, World!",
+  "sender_id": "Textio"
+}
+```
+
+### Webhook Event (Delivered)
+```json
+{
+  "event": "message_delivered",
+  "message_id": "msg_abc123",
+  "timestamp": "2024-01-15T10:35:00Z",
+  "recipient": "+1234567890"
+}
+```
+
+### Webhook Event (Failed)
+```json
+{
+  "event": "message_failed",
+  "message_id": "msg_xyz789",
+  "error_code": 3001,
+  "error_message": "Invalid recipient number"
+}
+```
+
+### Contact Export Format
+```json
+{
+  "version": "1.0",
+  "contacts": [
+    {
+      "name": "John Doe",
+      "phone": "+1234567890",
+      "email": "john@example.com",
+      "subscribed": true
+    }
+  ],
+  "exported_at": "2024-01-15T10:30:00Z"
+}
+```
+
+## Serde Attributes Used
+
+| Attribute | Purpose |
+|-----------|---------|
+| `#[serde(rename = "...")]` | Rename field in JSON |
+| `#[serde(rename_all = "...")]` | Rename all fields |
+| `#[serde(skip_serializing_if = "...")]` | Skip field if condition is true |
+| `#[serde(default)]` | Use Default if field missing |
+| `#[serde(skip)]` | Never serialize/deserialize |
+| `#[serde(tag = "...")]` | Tagged enum representation |

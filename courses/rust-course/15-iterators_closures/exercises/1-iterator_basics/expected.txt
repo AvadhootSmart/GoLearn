@@ -1,0 +1,29 @@
+=== Part 1: iter() - Immutable References ===
+
+Total messages: 3
+Message to Bob: Some(Message { id: 2, content: "Meeting at 3pm", recipient: "Bob", sent: false })
+Messages still accessible: 3 messages
+
+=== Part 2: iter_mut() - Mutable References ===
+
+Marked messages as sent:
+  ID 101: sent = true
+  ID 102: sent = true
+  ID 103: sent = true
+
+=== Part 3: into_iter() - Ownership Transfer ===
+
+Extracted message IDs: [201, 202]
+
+=== Part 4: Consuming Adaptors ===
+
+Sum of numbers: 150
+Has number > 25: true
+All positive: true
+Position of 30: Some(2)
+
+=== Part 5: Textio Message Analysis ===
+
+Messages with verification codes: 3
+All recipients: ["+15550001", "+15550002", "+15550001", "+15550003", "+15550001"]
+First message to +15550001: Some(Message { id: 1, content: "Your code is 1234", recipient: "+15550001", sent: false })

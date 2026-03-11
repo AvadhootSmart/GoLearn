@@ -1,0 +1,39 @@
+$ cargo test
+
+running 32 tests
+test tests::client_tests::test_clear ... ok
+test tests::client_tests::test_message_count ... ok
+test tests::client_tests::test_send_batch ... ok
+test tests::client_tests::test_send_batch_with_errors ... ok
+test tests::client_tests::test_send_empty_body ... ok
+test tests::client_tests::test_send_single_message ... ok
+test tests::client_tests::test_send_too_long ... ok
+test tests::client_tests::test_send_with_fixture ... ok
+test tests::cost_calculation::test_boundary ... ok
+test tests::cost_calculation::test_free_tier ... ok
+test tests::cost_calculation::test_large_volumes ... ok
+test tests::cost_calculation::test_paid_tier ... ok
+test tests::message_parsing::test_parse_batch ... ok
+test tests::message_parsing::test_parse_batch_empty ... ok
+test tests::message_parsing::test_parse_batch_invalid_lines ... ok
+test tests::message_parsing::test_parse_batch_skips_empty_lines ... ok
+test tests::message_parsing::test_parse_batch_with_fixture ... ok
+test tests::test_fixture_reusability ... ok
+test tests::validation::test_invalid_phone_no_plus ... ok
+test tests::validation::test_invalid_phone_too_long ... ok
+test tests::validation::test_invalid_phone_too_short ... ok
+test tests::validation::test_multiple_valid_phones ... ok
+test tests::validation::test_validate_and_panic_no_plus ... ok
+test tests::validation::test_validate_and_panic_short ... ok
+test tests::validation::test_valid_phone ... ok
+test tests::validation::test_valid_phone_using_fixture ... ok
+
+test result: ok. 26 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out
+
+$ cargo test -- --ignored
+
+running 2 tests
+test tests::client_tests::slow_network_test ... ok
+test tests::complete_workflow ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out

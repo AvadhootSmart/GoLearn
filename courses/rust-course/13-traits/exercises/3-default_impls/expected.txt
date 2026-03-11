@@ -1,0 +1,29 @@
+=== SMS Serialization ===
+Serialized: SERIAL:SMS|+15551234567|+15559876543|Hello from Textio!
+=== Email Serialization ===
+Serialized: SERIAL:EMAIL|user@example.com|noreply@textio.com|Welcome|Thank you for joining Textio!
+
+=== Deserialization ===
+Deserialized SMS to: +15551112222
+
+=== Formatting ===
+SMS formatted: [Hello from Textio!]
+SMS length: 18
+Email formatted: [Welcome] Thank you for joining Textio!
+Email length: 29
+
+=== Validation ===
+=== SMS Validation ===
+Is valid: true
+Strict validation passed
+=== Email Validation ===
+Is valid: true
+Strict validation passed
+
+=== Invalid SMS ===
+Is valid: false
+Validation failed: Recipient is empty
+
+=== Long Message Test ===
+Is long: true
+Length: 150

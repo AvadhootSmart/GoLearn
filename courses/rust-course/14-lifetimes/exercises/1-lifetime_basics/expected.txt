@@ -1,0 +1,20 @@
+=== Textio SMS Parser ===
+
+Parsed SMS:
+  Sender: 5551234567
+  Recipient: 5559876543
+  Body: Hello, this is a test message!
+  First word: Hello,
+
+=== Longest Message ===
+Longest: This is a longer message
+
+=== Phone Validation ===
+Valid phone: 5551234567
+Error: Phone number too short
+
+=== Area Code Extraction ===
+Area code: 555
+
+=== Message Cache ===
+Message msg-001 status: delivered

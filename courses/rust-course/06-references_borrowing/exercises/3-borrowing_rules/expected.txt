@@ -1,0 +1,24 @@
+=== Textio Borrowing Rules Practice ===
+
+Part 1: Multiple Mutable Borrows
+Hello, there!
+
+Part 2: Mixed Immutable and Mutable Borrows
+First: First
+Messages: ["First", "Second", "Third", "Fourth"]
+
+Part 3: Using Scopes
+Final data: Initial value (modified once) (modified twice)
+
+Part 4: Extracting Values
+Highest priority: Important
+
+Part 5: Using Indices
+Modified: [10, 20, 30, 40, 100]
+
+Part 6: Split Borrowing
+Split and modified: [2, 4, 6, 12, 15, 18]
+
+Part 7: Textio Message Processing
+Messages to +15551112222: 2
+Total processed: 4

@@ -1,0 +1,6 @@
+Welcome to Textio SMS API!
+Message length: 50 chars (limit: 160) - Valid!
+From: +15551234567
+To: +15559876543
+Message: Hello from Textio!
+Total cost for 1000 messages: $7.50

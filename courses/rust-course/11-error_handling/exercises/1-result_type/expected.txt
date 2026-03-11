@@ -1,0 +1,37 @@
+=== Textio SMS API - Result Type Demo ===
+
+--- Phone Number Parsing ---
+Valid phone '5551234567': Ok("5551234567")
+Short phone '123': Err(InvalidPhoneLength)
+Invalid phone '555abc4567': Err(InvalidPhoneFormat)
+
+--- Using is_ok() and is_err() ---
+Is valid_phone ok? true
+Is short_phone err? true
+
+--- Using check_result ---
+Valid: 5551234567
+Invalid: Phone number must be 10 digits
+
+--- Message Length Parsing ---
+Valid length '50': Ok(50)
+Invalid length 'abc': Err(InvalidLengthString)
+
+--- Using unwrap_or() ---
+Valid phone with default: 5551234567
+Invalid phone with default: 0000000000
+
+--- Message Validation ---
+Short message: Ok(13)
+Long message (200 chars): Err(MessageTooLong)
+
+--- Send SMS ---
+Valid SMS: Ok(MessageId(12345))
+Invalid phone: Err(InvalidPhoneLength)
+Message too long: Err(MessageTooLong)
+
+--- unwrap() and expect() ---
+Unwrapped phone: 5559876543
+Expected length: 100
+
+=== Exercise Complete ===

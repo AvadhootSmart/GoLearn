@@ -1,0 +1,7 @@
+Message built: Message { to: "+15550001", from: "+15550002", body: "Hello from Textio!", priority: 3, delay_seconds: 60, callback_url: Some("https://example.com/callback") }
+Minimal message: Message { to: "+15550001", from: "Textio", body: "Minimal message", priority: 1, delay_seconds: 0, callback_url: None }
+Expected error: 'to' field is required
+Expected error: 'to' must start with '+'
+Expected error: 'body' exceeds 160 characters
+Priority message: Message { to: "+15550001", from: "Textio", body: "With priority", priority: 5, delay_seconds: 0, callback_url: None }
+From field defaulted to: Textio

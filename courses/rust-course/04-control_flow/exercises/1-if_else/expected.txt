@@ -1,0 +1,30 @@
+=== Textio SMS Message Router ===
+
+Phone: +1-555-0123
+Country Code: +1
+Gateway: US_GATEWAY
+
+Message Length: 165 chars
+Premium Customer: true
+Total Cost: $1.9800
+
+Message: "Hello from Textio!"
+Length: 18
+Status: Valid
+
+Monthly Messages: 5500
+Account Age: 6 months
+Tier: Gold
+Discount: 15%
+
+Urgent: true
+Business Hours: true
+Priority Sub: false
+Priority: Immediate
+
+Messages: 950/1000
+Usage: 95.0%
+Status: CRITICAL
+Message: CRITICAL - 50 messages remaining
+
+=== Routing Complete ===

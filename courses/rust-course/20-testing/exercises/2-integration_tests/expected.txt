@@ -1,0 +1,24 @@
+$ cargo test
+
+running 18 tests
+
+test client_test::test_client_creation ... ok
+test client_test::test_client_new ... ok
+test contact_test::test_add_contact ... ok
+test contact_test::test_add_contact_invalid_phone ... ok
+test contact_test::test_get_contact ... ok
+test contact_test::test_get_nonexistent_contact ... ok
+test contact_test::test_list_contacts ... ok
+test contact_test::test_send_to_contact ... ok
+test contact_test::test_send_to_nonexistent_contact ... ok
+test message_test::test_complete_message_flow ... ok
+test message_test::test_get_message_status ... ok
+test message_test::test_get_status_nonexistent ... ok
+test message_test::test_mark_delivered ... ok
+test message_test::test_message_history ... ok
+test message_test::test_send_empty_message ... ok
+test message_test::test_send_invalid_phone ... ok
+test message_test::test_send_message ... ok
+test message_test::test_send_message_status ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out

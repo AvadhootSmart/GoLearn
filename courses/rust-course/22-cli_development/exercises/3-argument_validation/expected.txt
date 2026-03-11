@@ -1,0 +1,146 @@
+=== Expected Output Examples ===
+
+--- Valid input ---
+$ cargo run -- --to +1234567890 --message "Hello, World!" --api-key tx_live_secretkey123
+
+=== Textio SMS ===
+
+Sending message immediately...
+
+To: +1234567890
+Message: Hello, World!
+
+---
+Message sent successfully!
+
+--- Valid input with verbose mode ---
+$ cargo run -- -t +1234567890 -m "Test message" --api-key tx_live_test123456 -v
+
+=== Textio SMS ===
+
+[Verbose Mode]
+Phone: +1234567890 (formatted: +1 (234) 567-890)
+Message length: 12/160 characters (148 remaining)
+API Key: tx_live_test...
+
+Sending message immediately...
+
+To: +1234567890
+Message: Test message
+
+---
+Message sent successfully!
+
+--- Scheduled message ---
+$ cargo run -- --to +1234567890 --message "Scheduled test" --api-key tx_live_key123 --schedule "2024-12-25T14:30:00"
+
+=== Textio SMS ===
+
+Scheduling message for: 2024-12-25T14:30:00
+
+To: +1234567890
+Message: Scheduled test
+
+---
+Message scheduled successfully!
+
+--- Invalid phone number (no + prefix) ---
+$ cargo run -- --to 1234567890 --message "Test" --api-key tx_live_key123
+
+error: Invalid value "1234567890" for '--to <TO>': Phone number must start with '+' and include country code.
+Examples: +1 for US/Canada, +44 for UK, +91 for India
+
+For more information, try '--help'.
+
+--- Invalid phone number (too short) ---
+$ cargo run -- --to +123 --message "Test" --api-key tx_live_key123
+
+error: Invalid value "+123" for '--to <TO>': Phone number too short: 3 digits found.
+Phone numbers must have 10-15 digits (excluding '+').
+
+For more information, try '--help'.
+
+--- Invalid phone number (too long) ---
+$ cargo run -- --to +1234567890123456 --message "Test" --api-key tx_live_key123
+
+error: Invalid value "+1234567890123456" for '--to <TO>': Phone number too long: 16 digits found.
+Phone numbers must have 10-15 digits (excluding '+').
+
+For more information, try '--help'.
+
+--- Invalid message (empty) ---
+$ cargo run -- --to +1234567890 --message "" --api-key tx_live_key123
+
+error: Invalid value "" for '--message <MESSAGE>': Message cannot be empty.
+
+For more information, try '--help'.
+
+--- Invalid message (too long) ---
+$ cargo run -- --to +1234567890 --message "This message is way too long and exceeds the 160 character limit for SMS messages. It contains more than 160 characters to demonstrate the validation error message that will be shown to the user when they try to send a message that is too long." --api-key tx_live_key123
+
+error: Invalid value "..." for '--message <MESSAGE>': Message too long: 191 characters (maximum is 160).
+Consider splitting into multiple messages or using a link shortener.
+
+For more information, try '--help'.
+
+--- Invalid API key (no tx_ prefix) ---
+$ cargo run -- --to +1234567890 --message "Test" --api-key secret_key_123456
+
+error: Invalid value "secret_key_123456" for '--api-key <API_KEY>': Invalid API key format. All Textio API keys start with 'tx_'.
+Example: tx_live_sk_abc123...
+Get your API key at: https://textio.example.com/dashboard/api-keys
+
+For more information, try '--help'.
+
+--- Invalid API key (too short) ---
+$ cargo run -- --to +1234567890 --message "Test" --api-key tx_short
+
+error: Invalid value "tx_short" for '--api-key <API_KEY>': API key too short: 7 characters (minimum is 16).
+Get your API key at: https://textio.example.com/dashboard/api-keys
+
+For more information, try '--help'.
+
+--- Invalid schedule format ---
+$ cargo run -- --to +1234567890 --message "Test" --api-key tx_live_key123 --schedule "tomorrow"
+
+error: Invalid value "tomorrow" for '--schedule <SCHEDULE>': Invalid date/time format: 'tomorrow'
+Supported formats:
+- 2024-12-25T14:30:00 (ISO 8601)
+- 2024-12-25 14:30:00
+- 2024-12-25 (defaults to midnight)
+
+For more information, try '--help'.
+
+--- Phone number with formatting characters (auto-cleaned) ---
+$ cargo run -- --to "+1 (234) 567-8901" --message "Formatted" --api-key tx_live_key123 -v
+
+=== Textio SMS ===
+
+[Verbose Mode]
+Phone: +12345678901 (formatted: +1 (234) 567-8901)
+Message length: 9/160 characters (151 remaining)
+API Key: tx_live_key...
+
+Sending message immediately...
+
+To: +12345678901
+Message: Formatted
+
+---
+Message sent successfully!
+
+--- Help output ---
+$ cargo run -- --help
+
+Send SMS messages with validation
+
+Usage: textio [OPTIONS] --to <TO> --message <MESSAGE> --api-key <API_KEY>
+
+Options:
+  -t, --to <TO>              Recipient phone number (e.g., +1234567890)
+  -m, --message <MESSAGE>    Message content (max 160 characters)
+      --api-key <API_KEY>    API key for authentication (starts with tx_) [env: TEXTIO_API_KEY=]
+  -s, --schedule <SCHEDULE>  Schedule message for later (ISO 8601 format)
+  -v, --verbose              Enable verbose output
+  -h, --help                 Print help
+  -V, --version              Print version

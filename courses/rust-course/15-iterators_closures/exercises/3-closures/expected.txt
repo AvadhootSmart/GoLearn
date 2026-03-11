@@ -1,0 +1,51 @@
+=== Part 1: Basic Closure Syntax ===
+
+add_one(5) = 6
+concat: Hello, World!
+5 is positive
+-3 is negative
+0 is zero
+
+=== Part 2: Type Inference ===
+
+4 * 5 = 20
+2.5 * 4.0 = 10
+
+=== Part 3: Capturing the Environment ===
+
+With prefix: [TEXTIO] Hello
+'Short' is valid: true
+'This is a very long message' is valid: false
+
+=== Part 4: Closures with Iterators ===
+
+Numbers > 5: [6, 7, 8, 9, 10]
+Formatted (first 3): ["Num: 1", "Num: 2", "Num: 3"]
+Has 7: true
+
+=== Part 5: Closures as Function Parameters ===
+
+Messages to +15550001:
+  Message { id: 1, content: "Hello Alice", recipient: "+15550001", status: Pending }
+  Message { id: 3, content: "Your code is 1234", recipient: "+15550001", status: Pending }
+  Message { id: 5, content: "Hello Bob", recipient: "+15550001", status: Pending }
+
+Message summaries:
+  [1] -> +15550001: Hello Alice
+  [2] -> +15550002: Meeting at 3pm
+  [3] -> +15550001: Your code is 1234
+  [4] -> +15550003: Don't forget!
+  [5] -> +15550001: Hello Bob
+
+=== Part 6: FnMut - Mutable Captures ===
+
+Matched 3 messages out of 3
+
+=== Part 7: Textio Message Router ===
+
+Priority messages:
+  ID 101 to +15550001
+  ID 103 to +15550003
+  ID 104 to +15550001
+
+Verification-related messages: 2

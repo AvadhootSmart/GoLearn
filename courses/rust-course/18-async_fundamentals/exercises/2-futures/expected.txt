@@ -1,0 +1,14 @@
+=== Understanding Futures ===
+
+1. Custom CountdownFuture:
+   Result: Countdown complete after 3 polls!
+
+2. Message Pipeline State Machine:
+   Message ID: 42
+   Body: Message body 42
+   Processed: true
+
+3. DelayFuture:
+   Completed in 50.Xms
+
+=== Future exploration complete ===

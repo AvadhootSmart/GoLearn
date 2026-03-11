@@ -1,0 +1,30 @@
+=== Textio Shared State Demo ===
+
+--- Basic Arc ---
+Thread sees 5 messages
+Main thread sees 5 messages
+
+--- Basic Mutex ---
+Counter: 2
+
+--- Shared Counter ---
+Final counter: 50
+
+--- Status Aggregator ---
+Updated sent count
+Updated delivered count
+Updated failed count
+Updated sent count
+Updated delivered count
+Final stats: MessageStats { sent: 2, delivered: 2, failed: 1 }
+
+--- RwLock Demo ---
+Reader 0: 0 messages in log
+Reader 1: 0 messages in log
+Reader 2: 0 messages in log
+Writer: Added message
+Final log: ["New message"]
+
+Note: The order of "Updated" lines may vary due to concurrent execution.
+The order of reader/writer output may also vary. The writer might
+execute before some readers, in which case they would see 1 message.

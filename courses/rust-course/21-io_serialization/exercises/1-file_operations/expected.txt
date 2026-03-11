@@ -1,0 +1,45 @@
+# Expected Output for Exercise 1: File Operations
+
+## Running `cargo run` with complete.rs
+
+```
+Saved 3 contacts
+Loaded 3 contacts:
+  - John Doe (+1234567890)
+  - Jane Smith (+0987654321)
+  - Bob Wilson (+1122334455)
+Messages logged
+Contacts file size: 85 bytes
+Backup created at: "contacts.bak"
+```
+
+## Running `cargo test`
+
+```
+running 4 tests
+test tests::test_load_contacts ... ok
+test tests::test_save_and_load_contacts ... ok
+test tests::test_append_to_log ... ok
+test tests::test_file_exists ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Generated Files
+
+### contacts.txt (after save_contacts)
+```
+# Textio Contacts
+John Doe, +1234567890
+Jane Smith, +0987654321
+Bob Wilson, +1122334455
+```
+
+### message_log.txt (after append_to_log)
+```
+[2024-01-15 10:30:00] To: +1234567890 | Status: sent | Message: Hello, World!
+[2024-01-15 10:30:00] To: +0987654321 | Status: delivered | Message: Test message
+```
+
+### contacts.bak (after create_backup)
+Same content as contacts.txt

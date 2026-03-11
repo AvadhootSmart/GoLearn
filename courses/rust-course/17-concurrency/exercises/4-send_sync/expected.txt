@@ -1,0 +1,22 @@
+=== Textio Send/Sync Demo ===
+
+--- Send Trait ---
+Thread received: Hello from main
+Thread sees: Shared data
+Main still has: Shared data
+
+--- Sync Trait ---
+Final count: 3
+
+--- Atomic Counter ---
+Atomic counter: 500
+
+--- Custom Thread-Safe Type ---
+Sent: 30, Failed: 10
+
+--- Compile Errors Demo ---
+Uncomment code in compile_errors_demo() to see errors
+Use Arc<Mutex<T>> or Arc<Atomic*> instead of Rc/RefCell/Cell
+
+Note: All outputs are deterministic due to proper synchronization.
+The order of thread execution may vary but final results are consistent.

@@ -1,0 +1,19 @@
+=== Lifetime Elision Demo ===
+
+Default sender: TextioAPI
+Welcome message: Welcome to Textio!
+
+First word: Hello
+Longer: Longer message
+Phone prefix: 555
+Split: sender='sender', body='Hello there'
+
+Blocked prefixes: ["SPAM:", "ADS:"]
+Is 'SPAM: Buy now!' blocked? true
+Is 'Hello there' blocked? false
+
+Selected: First message
+Truncated: This is a very long 
+
+Header: Content-Type = text/plain
+Message count: 3

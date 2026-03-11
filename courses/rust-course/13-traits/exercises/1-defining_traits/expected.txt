@@ -1,0 +1,26 @@
+=== SMS Message ===
+From: +15559876543
+To: +15551234567
+Content: Hello from Textio!
+Is empty: false
+
+=== MMS Message ===
+From: +15553334444
+To: +15551112222
+Content: Check out this image!
+Is empty: false
+Media URL: https://example.com/image.jpg
+
+=== Message Status ===
+Message ID: msg_12345
+Status: pending
+Timestamp: 1699999999
+
+=== After Update ===
+Message ID: msg_12345
+Status: sent
+Timestamp: 1699999999
+Attempts: 1
+
+=== Empty Message Test ===
+Is empty: true

@@ -1,0 +1,31 @@
+=== KeyValue Tests ===
+Key: 1, Value: first
+Key: msg-001, Recipient: +1234567890
+
+=== Mapping Tests ===
+Length: 3
+Get 'two': Some(2)
+Contains 'four': false
+
+=== StatefulMessage Tests ===
+Created draft message with id 1
+Message validated
+Message queued
+Sending message "Hello World"...
+Message sent! ID: 1
+
+=== Channel Tests ===
+Channel ID: 1, Name: sms-primary
+Channel ID: "email-001", Name: email-main
+
+=== Processor Tests ===
+Processor 'text-processor' processing: "42"
+Process '42': Ok(42)
+Processed count: 1
+Processor 'text-processor' processing: "not a number"
+Process 'not a number': Err(ProcessError("invalid digit found in string"))
+Processed count: 2
+
+=== ServiceBuilder Tests ===
+Built service: Service(config: Some("production"), transport: Some("https"))
+Minimal service: Service(config: None, transport: None)

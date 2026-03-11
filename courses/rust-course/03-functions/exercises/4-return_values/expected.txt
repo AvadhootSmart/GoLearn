@@ -1,0 +1,17 @@
+Validating 'Textio': Ok("valid")
+Validating '': Err("Sender ID cannot be empty")
+Validating 'ThisIsTooLong123': Err("Sender ID cannot exceed 11 characters")
+Validating 'Bad-Chars!': Err("Sender ID must contain only alphanumeric characters")
+Delivery stats: 4 delivered, 3 failed, 57.1% success rate
+Empty stats: 0 delivered, 0 failed, 0.0% success rate
+Undelivered message indices: [1, 3]
+Mismatch result: []
+Qty     Rate    Cost
+-----   -----   ------
+100     0.05    5.00
+250     0.04    10.00
+500     0.03    15.00
+-----           ------
+Total:          30.00
+Empty table:
+No data

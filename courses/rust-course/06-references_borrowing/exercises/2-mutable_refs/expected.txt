@@ -1,0 +1,21 @@
+=== Textio Message Modification ===
+
+Modified: Hello, Textio!
+
+Final value: Initial value!
+
+SMS Body: Your code is 123456
+
+- Textio SMS Service
+
+Message ID: 1001
+Status: Sent
+Body: Hello!
+
+Capitalized messages: ["Hello", "World", "Textio"]
+
+Count: 1
+Built message:
+  To: +15551112222
+  From: +15553334444
+  Body: Your verification code is 654321

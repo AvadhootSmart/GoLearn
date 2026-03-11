@@ -1,0 +1,138 @@
+# Expected Output for Exercise 4: Config Files
+
+## Running `cargo run` with complete.rs
+
+```
+Config saved to "textio.toml"
+
+Loaded config:
+  API URL: https://api.textio.com/v1
+  Timeout: 30s
+  Default Sender: Textio
+  Log Level: info
+
+Config validation: PASSED
+
+Config values:
+  api.base_url: https://api.textio.com/v1
+  api.timeout: 30
+  messaging.default_sender: Textio
+  logging.level: info
+
+Config also saved as JSON to "textio.json"
+JSON round-trip: OK
+```
+
+## Running `cargo test`
+
+```
+running 10 tests
+test tests::test_load_config ... ok
+test tests::test_load_config_with_defaults ... ok
+test tests::test_save_and_load_config ... ok
+test tests::test_validate_config_valid ... ok
+test tests::test_validate_config_invalid_url ... ok
+test tests::test_validate_config_invalid_timeout ... ok
+test tests::test_validate_config_invalid_log_level ... ok
+test tests::test_get_config_value ... ok
+test tests::test_set_config_value ... ok
+test tests::test_merge_configs ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Generated Files
+
+### textio.toml
+```toml
+[api]
+base_url = "https://api.textio.com/v1"
+api_key = "your-api-key"
+timeout = 30
+max_retries = 3
+
+[messaging]
+default_sender = "Textio"
+max_message_length = 160
+
+[logging]
+level = "info"
+file = "textio.log"
+
+contacts_file = "contacts.toml"
+```
+
+### textio.json
+```json
+{
+  "api": {
+    "base_url": "https://api.textio.com/v1",
+    "api_key": "your-api-key",
+    "timeout": 30,
+    "max_retries": 3
+  },
+  "messaging": {
+    "default_sender": "Textio",
+    "max_message_length": 160
+  },
+  "logging": {
+    "level": "info",
+    "file": "textio.log"
+  },
+  "contacts_file": "contacts.toml"
+}
+```
+
+## Configuration Schema
+
+### TextioConfig
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| api | ApiConfig | defaults | API configuration |
+| messaging | MessagingConfig | defaults | Messaging settings |
+| logging | LoggingConfig | defaults | Logging settings |
+| contacts_file | Option\<String\> | None | Path to contacts file |
+
+### ApiConfig
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| base_url | String | https://api.textio.com/v1 | API endpoint |
+| api_key | Option\<String\> | None | Authentication key |
+| timeout | u64 | 30 | Request timeout (seconds) |
+| max_retries | u32 | 3 | Maximum retry attempts |
+
+### MessagingConfig
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| default_sender | String | Textio | Default sender ID |
+| max_message_length | usize | 160 | Maximum message length |
+
+### LoggingConfig
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| level | String | info | Log level (trace/debug/info/warn/error) |
+| file | Option\<String\> | None | Log file path |
+
+## Validation Rules
+
+| Field | Rule |
+|-------|------|
+| api.base_url | Must not be empty, must start with http:// or https:// |
+| api.timeout | Must be > 0 |
+| api.max_retries | Must be < 10 |
+| messaging.max_message_length | Must be > 0 and <= 1600 |
+| logging.level | Must be one of: trace, debug, info, warn, error |
+
+## Config Key Paths
+
+Supported paths for get_config_value/set_config_value:
+
+- `api.base_url`
+- `api.timeout`
+- `api.max_retries`
+- `api.api_key`
+- `messaging.default_sender`
+- `messaging.max_message_length`
+- `logging.level`
+- `logging.file`
+- `contacts_file`

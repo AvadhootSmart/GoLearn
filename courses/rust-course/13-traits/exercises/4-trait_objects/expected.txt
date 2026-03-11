@@ -1,0 +1,27 @@
+=== Individual Notifications ===
+[SMS] Sending to +15551234567: Hello via SMS!
+[Email] Sending to admin@textio.com: Hello via Email!
+
+=== Testing Length Limits ===
+SMS error: Message too long for SMS Notifier
+
+=== Broadcast Test ===
+[SMS] Sending to +15551111111: Broadcast message!
+[Email] Sending to team@textio.com: Broadcast message!
+[Push:Android] Sending to token123: Broadcast message!
+Successfully sent to 3 notifiers
+
+=== Finding Best Notifier ===
+For 150 chars: SMS Notifier
+For 5000 chars: Email Notifier
+
+=== Notification Manager ===
+Registered notifiers:
+  - SMS Notifier (max: 160 chars)
+  - Email Notifier (max: 10000 chars)
+[SMS] Sending to +15552222222: Manager broadcast!
+[Email] Sending to ops@textio.com: Manager broadcast!
+Manager sent to 2 notifiers
+
+=== Delivery Report (Static Dispatch) ===
+Report for: SMS Notifier

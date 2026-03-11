@@ -1,0 +1,13 @@
+=== Textio Async SMS API ===
+
+1. Sending single SMS:
+   Message 1 delivered: true
+
+2. Broadcasting to multiple recipients:
+   Sent 3 messages
+
+3. Send with callback:
+   Callback: Message 5 delivered!
+   Final status: delivered=true
+
+=== All operations completed ===

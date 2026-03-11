@@ -1,0 +1,88 @@
+=== Textio Match Expression System ===
+
+--- Task 1: HTTP Status Handler ---
+HTTP 200: Success (retry: false)
+HTTP 201: Success (retry: false)
+HTTP 400: Client Error (retry: false)
+HTTP 401: Client Error (retry: false)
+HTTP 404: Client Error (retry: false)
+HTTP 429: Rate Limited (retry: true)
+HTTP 500: Server Error (retry: true)
+HTTP 503: Server Error (retry: true)
+HTTP 502: Server Error (retry: true)
+
+--- Task 2: Message Router ---
++1-555-0100 (US) -> Americas Gateway
++44-20-1234 (UK) -> UK Gateway
++49-30-5678 (DE) -> EU Gateway
++33-1-9999 (FR) -> EU Gateway
++81-3-1111 (JP) -> Asia-Pacific Gateway
++86-10-2222 (CN) -> Asia Gateway
++55-11-3333 (BR) -> International Gateway
+
+--- Task 3: Priority Handler ---
+Priority 1: Queue=critical, Timeout=100ms, Retries=10
+Priority 2: Queue=high, Timeout=500ms, Retries=5
+Priority 3: Queue=normal, Timeout=2000ms, Retries=3
+Priority 4: Queue=low, Timeout=5000ms, Retries=2
+Priority 5: Queue=bulk, Timeout=10000ms, Retries=1
+Priority 0: Queue=default, Timeout=1000ms, Retries=3
+
+--- Task 4: Subscription Manager ---
+free: 100/month, 10/day, 1 features
+bronze: 500/month, 50/day, 3 features
+silver: 2000/month, 200/day, 5 features
+gold: 10000/month, 1000/day, 10 features
+platinum: 50000/month, 5000/day, 20 features
+enterprise: 0/month, 0/day, 0 features
+
+--- Task 5: Message Classifier ---
+msg1 (0 chars): Empty, 0 part(s)
+msg2 (15 chars): Short, 1 part(s)
+msg3 (80 chars): Medium, 1 part(s)
+msg4 (160 chars): Standard, 1 part(s)
+msg5 (200 chars): Extended, 2 part(s)
+msg6 (500 chars): Long, 4 part(s)
+
+--- Task 6: Error Classifier ---
+Error 1001: Network Error (recoverable: true)
+Error 1002: Network Error (recoverable: true)
+Error 2001: Validation Error (recoverable: false)
+Error 2002: Validation Error (recoverable: false)
+Error 3001: Rate Limit Error (recoverable: true)
+Error 4001: Authentication Error (recoverable: false)
+Error 9999: Unknown Error (recoverable: false)
+
+--- Task 7: Business Day Handler ---
+Monday: business=true, delivery=same day, surcharge=$0.00
+Tuesday: business=true, delivery=same day, surcharge=$0.00
+Wednesday: business=true, delivery=same day, surcharge=$0.00
+Thursday: business=true, delivery=same day, surcharge=$0.00
+Friday: business=true, delivery=same day, surcharge=$0.00
+Saturday: business=false, delivery=2 business days, surcharge=$0.50
+Sunday: business=false, delivery=2 business days, surcharge=$1.00
+Holiday: business=false, delivery=2 business days, surcharge=$1.00
+
+--- Task 8: Response Handler ---
+Response: Success: Message sent
+Response: Resource not found
+Response: Authentication required
+Response: Rate limited, retry in 60 seconds
+Response: Server error: 503
+
+--- Task 9: Character Classifier ---
+'A' -> Uppercase letter
+'z' -> Lowercase letter
+'5' -> Digit
+'@' -> Special character
+'space' -> Space
+'\n' -> Whitespace
+'M' -> Uppercase letter
+'0' -> Digit
+
+--- Task 10: Plan Selector ---
+Plan: Gold
+Price: $79.99/month
+Messages: 20000/month
+
+=== Match System Complete ===

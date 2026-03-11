@@ -1,0 +1,31 @@
+=== Textio SMS API - Error Propagation Demo ===
+
+--- Phone Parsing ---
+Valid phone: Ok("5551234567")
+Invalid phone: Err(InvalidPhone("123"))
+
+--- Message Validation ---
+Short message: Ok(())
+Long message: Err(MessageTooLong { max: 160, actual: 200 })
+
+--- Template Lookup ---
+Found 'welcome': Ok("Hello {name}, welcome to Textio!")
+Missing 'unknown': Err(TemplateNotFound("unknown"))
+
+--- Template Rendering ---
+Rendered welcome: Ok("Hello Test, welcome to Textio!")
+Missing template: Err(TemplateNotFound("missing"))
+
+--- Send Campaign Message (Full Chain) ---
+Success case: Ok("Sent to: 5551234567")
+Bad contact: Err(ContactNotFound("unknown"))
+Bad template: Err(TemplateNotFound("unknown"))
+
+--- Batch Processing ---
+Valid batch: Ok(["Sent to: 5551234567", "Sent to: 5559876543"])
+Mixed batch: Err(ContactNotFound("unknown"))
+
+--- Adding Context with map_err ---
+With context: Err("Campaign failed: Template not found: missing")
+
+=== Exercise Complete ===

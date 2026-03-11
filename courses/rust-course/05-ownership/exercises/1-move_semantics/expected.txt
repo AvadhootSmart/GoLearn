@@ -1,0 +1,57 @@
+=== Exercise 1: Basic Move Semantics ===
+
+Moved value: Hello, Textio!
+
+=== Exercise 2: Move vs Copy ===
+
+Original number: 42
+Copy number: 42
+Moved text: Textio SMS
+
+=== Exercise 3: Using Clone ===
+
+Original: Original message
+Clone: Original message
+After modification:
+Original: Original message - modified
+Clone: Original message
+
+=== Exercise 4: Struct Ownership ===
+
+Sent to: +1234567890
+Sent from: +0987654321
+Body: Hello from Textio!
+
+=== Exercise 5: Memory Analysis ===
+
+Long string length: 139 characters
+String struct size: 24 bytes
+Small string length: 2 characters
+String struct size: 24 bytes
+
+=== Exercise 6: Tuple Move Semantics ===
+
+First element (moved): hello
+Second element (copied): 42
+Third element (still accessible): world
+
+=== Exercise 7: Ownership Transfer Chain ===
+
+Final step: Step 1
+
+=== Exercise 8: Array of Owned Values ===
+
+Original messages: ["First message", "Second message", "Third message"]
+Removed message: Second message
+Remaining messages: ["First message", "Third message"]
+
+=== Exercise 9: String vs &str ===
+
+Owned String: I own this data
+Borrowed &str: I own this data
+Both valid - borrow doesn't take ownership!
+
+=== Exercise 10: Real Textio Scenario ===
+
+Sending SMS from +15559876543 to +15551234567: Your verification code is 12345
+SMS sent successfully: true

@@ -1,0 +1,11 @@
+Message 1: Message { to: "+15550001", from: "+15550002", body: "Hello from Textio!", priority: 1, delivered: false }
+Message 2: Message {
+    to: "+15550001",
+    from: "+15550002",
+    body: "Priority message!",
+    priority: 1,
+    delivered: false,
+}
+Message 3: Message { to: "+15550001", from: "+15550002", body: "Hello from Textio!", priority: 5, delivered: true }
+msg1.to is still valid: +15550001
+Stats: MessageStats { total_sent: 1000, total_delivered: 950, total_failed: 50 }

@@ -1,0 +1,67 @@
+=== describe_status ===
+Message is pending
+Message was sent
+Delivered at timestamp 1700000000
+Failed with code 500: Timeout
+
+=== is_terminal_status ===
+Pending: false
+Delivered: true
+Failed: true
+
+=== get_recipient ===
+SMS recipient: +1555123456
+MMS recipient: +1555987654
+
+=== estimate_cost ===
+SMS (5 chars): 1
+SMS (200 chars): 2
+MMS: 3
+Template (2 params): 2
+
+=== classify_error ===
+Network: Temporary
+InvalidNumber: Permanent
+RateLimited: Temporary
+ServerError 500: Temporary
+ServerError 400: Permanent
+Unauthorized: Auth
+
+=== error_message ===
+Network error: Timeout
+Rate limited, retry after 60 seconds
+
+=== is_retryable ===
+Network: true
+InvalidNumber: false
+RateLimited: true
+
+=== categorize_status_code ===
+200: success
+301: redirect
+404: client error
+500: server error
+99: unknown
+
+=== describe_options ===
+Both present: 1 and 2
+Only first: 1
+Only second: 2
+Both absent
+
+=== get_retry_after ===
+RateLimited: Some(60)
+Network: None
+
+=== describe_length ===
+0: empty
+5: short
+100: normal
+200: long
+5000: very long
+
+=== describe_slice ===
+Empty slice
+Single element: 1
+Pair: 1 and 2
+Multiple: first=1, last=5

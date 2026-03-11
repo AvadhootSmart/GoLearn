@@ -1,0 +1,47 @@
+=== Part 1: map() and filter() ===
+
+Doubled: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Evens: [2, 4, 6, 8, 10]
+Odd squares: [1, 9, 25, 49, 81]
+
+=== Part 2: take() and skip() ===
+
+First five from infinite: [1, 2, 3, 4, 5]
+Skip 3, take 4: [4, 5, 6, 7]
+
+=== Part 3: enumerate() ===
+
+0: apple
+1: banana
+2: cherry
+3: date
+4: elderberry
+Indexed: [(0, "apple"), (1, "banana"), (2, "cherry"), (3, "date"), (4, "elderberry")]
+
+=== Part 4: zip() ===
+
+Name-Age pairs: [("Alice", 28), ("Bob", 32), ("Charlie", 25)]
+Full info: [("Alice", 28, "New York"), ("Bob", 32, "San Francisco"), ("Charlie", 25, "Chicago")]
+
+=== Part 5: chain() and flatten() ===
+
+Combined queues: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Flattened: [1, 2, 3, 4, 5, 6]
+All words: ["Hello", "world", "Rust", "is", "great", "Learn", "iterators"]
+
+=== Part 6: Textio Message Pipeline ===
+
+Urgent messages:
+  [1] To +15550001: Your code is 1234
+  [3] To +15550001: Your code is 5678
+  [5] To +15550002: Delivery update
+  [6] To +15550001: Account alert
+  [7] To +15550003: Your code is 9999
+
+Page 1 of messages:
+  Message { id: 4, phone: "+15550003", content: "Promo: 50% off!", priority: 2 }
+  Message { id: 5, phone: "+15550002", content: "Delivery update", priority: 7 }
+  Message { id: 6, phone: "+15550001", content: "Account alert", priority: 8 }
+
+Unique phone numbers: ["+15550001", "+15550002", "+15550003"]
+Messages for +15550001: 3

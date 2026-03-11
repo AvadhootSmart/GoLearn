@@ -1,0 +1,45 @@
+=== Part 1: Understanding Capture Modes ===
+
+Length: 5
+Text still accessible: Hello
+After mutation: Hello World
+
+=== Part 2: The move Keyword ===
+
+I belong to the closure
+Closure called successfully
+Prefixed: [TEXTIO] Hello World
+
+=== Part 3: FnOnce - Consuming Closures ===
+
+Consuming message ID: 999
+
+=== Part 4: FnMut - Mutable Closures ===
+
+Processed 3 messages, counted 3
+Counter: 11
+Counter: 12
+Counter: 13
+
+=== Part 5: Fn - Immutable Closures ===
+
+Found message: Some(Message { id: 2, content: "Hello Bob", recipient: "+15550002" })
+Alice's message: Some(Message { id: 1, content: "Hello Alice", recipient: "+15550001" })
+
+=== Part 6: move with Threads ===
+
+Sum from thread: 30
+
+=== Part 7: Textio Message Handler ===
+
+Valid messages:
+  ID 2: Message { id: 2, content: "This is a longer message", recipient: "+15550002" }
+  ID 4: Message { id: 4, content: "Valid long message here", recipient: "+15550003" }
+
+=== Part 8: Complex Capture Scenario ===
+
+Attempt 1: Request 1 processed
+Attempt 2: Request 2 processed
+Attempt 3: Request 3 processed
+Attempt 4: Rate limited!
+Attempt 5: Rate limited!

@@ -1,0 +1,7 @@
+Phone number: +15550001
+Account ID: acc_12345678
+Message ID: MessageId(42)
+Priority level: 3
+System is ready!
+User: AccountId("user_001"), Sender: AccountId("user_002")
+Sending notification to: +15550002

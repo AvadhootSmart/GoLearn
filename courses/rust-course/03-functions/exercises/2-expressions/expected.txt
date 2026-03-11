@@ -1,0 +1,11 @@
+Length 50: short
+Length 100: medium
+Length 150: long
+5 segments at $0.05: $0.25
+15 segments at $0.05: $0.68
+Message #12345: DELIVERED (1 attempts)
+Message #67890: FAILED (3 attempts)
+500 messages: tier1
+5000 messages: tier2
+50000 messages: tier3
+500000 messages: enterprise

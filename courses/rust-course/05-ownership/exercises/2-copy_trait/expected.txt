@@ -1,0 +1,70 @@
+=== Exercise 1: Identifying Copy Types ===
+
+i32: num1 = 42, num2 = {} (both valid = Copy!)
+String: str2 = hello (str1 moved, NOT Copy!)
+bool: bool1 = true, bool2 = true (both valid = Copy!)
+Vec<i32>: vec2 = [1, 2, 3] (vec1 moved, NOT Copy!)
+
+=== Exercise 2: Tuple Copy Semantics ===
+
+Tuple (i32, f64, bool): both valid = (1, 2.0, true)
+Tuple (i32, String, bool): tuple4 = (1, "hello", true)
+tuple3.0 and tuple3.2 still valid: 1, true
+
+=== Exercise 3: Array Copy Semantics ===
+
+Array [i32; 5]: both valid = [1, 2, 3, 4, 5]
+Array [String; 2]: arr4 = ["a", "b"]
+arr3 moved, not Copy
+
+=== Exercise 4: Custom Copy Type - PhoneNumber ===
+
+Phone 1: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+Phone 2: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+Phone valid: true
+Phone still valid after function: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+
+=== Exercise 5: Custom Copy Type - MessageId ===
+
+ID 1: MessageId(12345)
+ID 2: MessageId(12345)
+ID 1 value: 12345
+ID 2 value: 12345
+
+=== Exercise 6: Mixed Struct - Copy and Non-Copy ===
+
+Copied ID: MessageId(1)
+Copied phone: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+Original ID still valid: MessageId(1)
+Original phone still valid: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+Body cloned: Hello from Textio!
+Original body: Hello from Textio!
+
+=== Exercise 7: Size Comparison ===
+
+Size of i32: 4 bytes
+Size of bool: 1 bytes
+Size of f64: 8 bytes
+Size of PhoneNumber: 8 bytes
+Size of MessageId: 8 bytes
+Size of String: 24 bytes
+Size of Vec<i32>: 24 bytes
+
+=== Exercise 8: Copy Through Functions ===
+
+Original: 42, Result: 84
+Phone: +1 (555) 123-4567
+Phone still valid: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+
+=== Exercise 9: Clone vs Copy Performance ===
+
+All three valid: PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }, PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }, PhoneNumber { country_code: 1, area_code: 555, exchange: 123, line: 4567 }
+Both Strings: Hello, Hello
+
+=== Exercise 10: Real Textio Scenario ===
+
+Processing batch MessageId(1000) for phone PhoneNumber { country_code: 1, area_code: 800, exchange: 555, line: 1234 }
+Processing batch MessageId(1000) for phone PhoneNumber { country_code: 1, area_code: 800, exchange: 555, line: 1234 }
+Processing batch MessageId(1000) for phone PhoneNumber { country_code: 1, area_code: 800, exchange: 555, line: 1234 }
+Batch ID still valid: MessageId(1000)
+Default phone still valid: PhoneNumber { country_code: 1, area_code: 800, exchange: 555, line: 1234 }

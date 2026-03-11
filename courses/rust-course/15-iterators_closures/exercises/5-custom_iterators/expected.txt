@@ -1,0 +1,71 @@
+=== Part 1: Counter Iterator ===
+
+Counting 1 to 5:
+  1
+  2
+  3
+  4
+  5
+Counter vector: [10, 11, 12, 13, 14, 15]
+
+=== Part 2: Fibonacci Iterator ===
+
+First 10 Fibonacci numbers:
+  0
+  1
+  1
+  2
+ 3
+  5
+  8
+  13
+  21
+  34
+Sum of first 20 Fibonacci numbers: 10945
+
+=== Part 3: MessageQueue Iterator ===
+
+All messages:
+  Message { id: 1, content: "Hello", recipient: "+15550001" }
+  Message { id: 2, content: "World", recipient: "+15550002" }
+  Message { id: 3, content: "Test", recipient: "+15550003" }
+Consuming queue:
+  Consumed: 1
+  Consumed: 2
+  Consumed: 3
+
+=== Part 4: Paginated Iterator ===
+
+Pages of 3 messages:
+Page 0:
+  1
+  2
+  3
+Page 1:
+  4
+  5
+  6
+Page 2:
+  7
+
+=== Part 5: Filtered Iterator ===
+
+Even numbers: [2, 4, 6, 8, 10]
+
+=== Part 6: MessageIdRange Iterator ===
+
+Message IDs: [100, 101, 102, 103, 104, 105]
+
+=== Part 7: Textio Message Stream ===
+
+Messages with verification codes (paginated):
+Page 0:
+  Message { id: 101, content: "Verification code: 1234", recipient: "+15550001" }
+  Message { id: 103, content: "Verification code: 5678", recipient: "+15550001" }
+Page 1:
+  Message { id: 105, content: "Verification code: 9999", recipient: "+15550004" }
+
+=== Part 8: Combining Custom Iterators ===
+
+Chained counters: [1, 2, 3, 10, 11, 12]
+Processed IDs: ["MSG-1", "MSG-2", "MSG-3", "MSG-4", "MSG-5"]

@@ -1,0 +1,13 @@
+Initial capacity: 50
+Message count: 3
+Capacity after adds: 50
+Last message: Textio SMS API
+Message at index 1: Rust is awesome!
+Popped message: Textio SMS API
+After reserve(100): capacity = 102
+After shrink_to_fit: capacity = 2
+Drained messages: ["Msg B", "Msg C"]
+Remaining messages: ["Msg A", "Msg D"]
+After splice: ["New Msg 1", "New Msg 2", "Msg D"]
+Delivery stats - Delivered: 3, Pending: 2, Failed: 1
+Doubled IDs: [2, 4, 6, 8, 10]

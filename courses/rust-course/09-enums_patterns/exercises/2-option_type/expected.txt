@@ -1,0 +1,43 @@
+=== MessageStore ===
+Find message 1: Some(Message { id: 1, to: "+1555123456", body: "Hello!", from: Some("TEXTIO"), media_url: None, status_code: Some(200) })
+Find message 99: None
+
+Find by phone +1555123456: Some(Message { id: 1, to: "+1555123456", body: "Hello!", from: Some("TEXTIO"), media_url: None, status_code: Some(200) })
+Find by phone +1999999999: None
+
+Sender for message 1: Some("TEXTIO")
+Sender for message 2: None
+
+Media URL for message 2: Some("https://example.com/image.jpg")
+Media URL for message 1: None
+
+Latest for +1555123456: Some(Message { id: 3, to: "+1555123456", body: "Second message", from: Some("SUPPORT"), media_url: None, status_code: Some(404) })
+
+Count with status 200: Some(2)
+Count with status 500: None
+
+=== UserManager ===
+User 1 phone: Some("+1555111111")
+User 2 phone: None
+User 99 phone: None
+
+User 1 email: Some("alice@example.com")
+User 3 email: None
+
+=== Helper Functions ===
+Length of Some("hello"): 5
+Length of None: 0
+
+Format Some("5551234"): +15551234
+Format None: Unknown
+
+Contact for user 1: Some("+1555111111")
+Contact for user 2: Some("bob@example.com")
+Contact for user 3: None
+
+Parse Some("42"): Some(42)
+Parse Some("abc"): None
+Parse None: None
+
+First Some from [None, Some(1), None, Some(3), Some(5)]: Some(1)
+All Somes: [1, 3, 5]

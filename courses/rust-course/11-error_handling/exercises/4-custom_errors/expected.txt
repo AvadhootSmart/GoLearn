@@ -1,0 +1,44 @@
+=== Textio SMS API - Custom Errors Demo ===
+
+--- Validation Errors ---
+InvalidPhone: Invalid phone '123': must be 10 digits
+MessageTooLong: Message too long: 200 characters (max: 160)
+EmptyField: Field 'recipient' cannot be empty
+InvalidFormat: Invalid format for 'date', expected: YYYY-MM-DD
+
+--- API Errors ---
+NotFound: Message with id 42 not found
+Unauthorized: Unauthorized: Token expired
+RateLimited: Rate limited, retry after 60 seconds
+Internal: Internal error: Database connection failed
+
+--- Textio Errors ---
+TextioError Validation: Validation error: Field 'body' cannot be empty
+TextioError Api: API error: Contact with id 99 not found
+
+--- Phone Validation ---
+Valid phone: Ok("5551234567")
+Invalid phone: Err(Validation(InvalidPhone { phone: "abc", reason: "must be 10 digits" }))
+
+--- Message Validation ---
+Valid message: Ok("Hello, World!")
+Empty message: Err(Validation(EmptyField { field: "message" }))
+Long message: Err(Validation(MessageTooLong { length: 200, max: 160 }))
+
+--- Parse Message ID (From trait) ---
+Valid ID: Ok(12345)
+Invalid ID: Err(Parse(ParseIntError { kind: InvalidDigit }))
+
+--- Get Message ---
+Found message: Ok("Message 1")
+Not found: Err(Api(NotFound { resource: "Message", id: 0 }))
+
+--- Send SMS (Full Chain) ---
+Success: Ok("Sent 'Message 1' to 5551234567")
+Bad phone: Err(Validation(InvalidPhone { phone: "123", reason: "must be 10 digits" }))
+Empty message: Err(Validation(EmptyField { field: "message" }))
+
+--- Error Source ---
+Has source: true
+
+=== Exercise Complete ===

@@ -1,0 +1,26 @@
+=== Point Tests ===
+Integer point: (10, 20)
+Sum: 30
+Float point: (3.5, 7.5)
+Sum: 11
+
+=== Pair Tests ===
+Message ID: 1
+Status: delivered
+User: alice with score: 95.5
+
+=== Container Tests ===
+Contained value: 42
+Mapped value: 84
+Extracted content: Test
+
+=== API Response Tests ===
+Success response: success=true, data=Some(SmsMessage { id: 1, content: "Your code is 123456", recipient: "+1234567890" })
+Error response: success=false, error=Some("Message not found")
+
+=== Repository Tests ===
+Repository count: 2
+Is empty: false
+User count: 1
+Found message: Some(SmsMessage { id: 1, content: "First", recipient: "+1111111111" })
+Contains non-existent: false

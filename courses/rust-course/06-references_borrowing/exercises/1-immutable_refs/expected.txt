@@ -1,0 +1,30 @@
+=== Textio Message Analysis ===
+
+Original: Welcome to Textio! Your verification code is 789123.
+Reference: Welcome to Textio! Your verification code is 789123.
+
+ref1: Welcome to Textio! Your verification code is 789123.
+ref2: Welcome to Textio! Your verification code is 789123.
+ref3: Welcome to Textio! Your verification code is 789123.
+
+Message length: 54 characters
+Word count: 9
+Verification code: 789123
+
+Phone valid: true
+
+SMS Summary:
+  From: +15553334444
+  To: +15551112222
+  Body: Your order has shipped!
+  Body length: 25 characters
+Still accessible: Your order has shipped!
+
+All messages:
+  - Hello, World!
+  - Textio is great!
+  - Rust is awesome!
+Total messages: 3
+
+Original: I still exist!
+Borrowed: I still exist!

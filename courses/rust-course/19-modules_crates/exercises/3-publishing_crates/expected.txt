@@ -1,0 +1,25 @@
+=== Textio SDK Demo ===
+
+Client created with API key
+
+Message created:
+  To: +15551234567
+  From: +15557654321
+  Body: Hello from Textio SDK!
+
+Message sent successfully!
+  Message ID: msg_<timestamp>
+  Status: Sent
+
+Current status: Delivered
+
+=== Publication Checklist ===
+✓ Cargo.toml metadata complete
+✓ README.md with installation and usage
+✓ LICENSE file (MIT OR Apache-2.0)
+✓ Crate-level documentation
+✓ Item-level documentation with examples
+✓ Semantic versioning (0.1.0)
+✓ Keywords and categories
+
+Ready to publish: cargo publish

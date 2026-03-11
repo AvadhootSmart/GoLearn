@@ -1,0 +1,50 @@
+=== Exercise 1: Taking Ownership ===
+
+Sending message 1 to +1234567890: Hello, Textio!
+Message was sent and consumed
+
+=== Exercise 2: Creating and Returning ===
+
+Created: SmsMessage { id: 2, to: "+1234567890", body: "Created message" }
+
+=== Exercise 3: Validate with Result ===
+
+Valid message: SmsMessage { id: 3, to: "+1234567890", body: "Valid" }
+Error: Invalid phone number: 1234567890
+
+=== Exercise 4: Transform and Return ===
+
+Signed message: SmsMessage { id: 5, to: "+1234567890", body: "Hello!\n\nSent via Textio" }
+
+=== Exercise 5: String Transformation ===
+
+Uppercased: HELLO WORLD
+
+=== Exercise 6: Destructuring ===
+
+Split: id=6, to=+1234567890, body=Hello World
+
+=== Exercise 7: Merging ===
+
+Merged: SmsMessage { id: 7, to: "+1234567890", body: "First | Second" }
+
+=== Exercise 8: Builder Pattern ===
+
+Built: SmsMessage { id: 0, to: "+1234567890", body: "Built message" }
+Expected error: body is required
+
+=== Exercise 9: Full Pipeline ===
+
+Pipeline result: [100] To: +1234567890 | Pipeline test
+
+Sent via Textio
+Pipeline error: Invalid phone number: invalid
+
+=== Exercise 10: Option Transfer ===
+
+Starting with 3 messages
+Took: SmsMessage { id: 201, to: "+1", body: "First" }
+Now have 2 messages
+Taking: id=202, to=+2
+Taking: id=203, to=+3
+Final count: 0 messages

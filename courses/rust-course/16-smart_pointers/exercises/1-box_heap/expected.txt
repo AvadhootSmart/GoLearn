@@ -1,0 +1,54 @@
+=== Part 1: Message Thread ===
+
+Thread: Message {
+    id: 1,
+    content: "Welcome to Textio!",
+    sender: "System",
+    replies: [
+        Message {
+            id: 2,
+            content: "Thanks!",
+            sender: "Alice",
+            replies: [
+                Message {
+                    id: 4,
+                    content: "You're welcome!",
+                    sender: "System",
+                    replies: [],
+                },
+            ],
+        },
+        Message {
+            id: 3,
+            content: "Hello!",
+            sender: "Bob",
+            replies: [],
+        },
+    ],
+}
+Message count: 4
+Found message 3: Hello!
+
+Messages from System: ["Welcome to Textio!", "You're welcome!"]
+
+=== Part 2: Contact BST ===
+
+Contact count: 4
+Find Alice: Some("+1-555-0101")
+Find David: None
+Sorted contacts: [("Alice", "+1-555-0101"), ("Anna", "+1-555-0104"), ("Bob", "+1-555-0102"), ("Charlie", "+1-555-0103")]
+
+=== Part 3: Expression Evaluator ===
+
+Expression: ((5 + 3) * (10 - 4))
+Result: Ok(48)
+Negated: (-(2 + 3)) = Ok(-5)
+Division by zero: Err("Division by zero")
+
+=== Part 4: Trait Objects ===
+
+Handler count: 3
+Handler types: ["SMS", "Email", "Push"]
+SMS to +1-555-0199: Hello from Textio! (cost: $0.05)
+Email to +1-555-0199 via smtp.textio.io: Hello from Textio!
+Push to device +1-555-0199 [com.textio.app]: Hello from Textio!

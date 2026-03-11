@@ -1,0 +1,37 @@
+=== Textio SMS API - Error Chains Demo ===
+
+--- AppError Basics ---
+Simple error: Something went wrong
+Chained error: Operation failed
+  Source: Database error: Connection failed
+
+--- Domain Errors ---
+Database error: Database error: Connection timeout
+Network error: Network error: Timeout
+Validation error: Validation error: Phone is invalid
+Not found error: User with id 42 not found
+
+--- Box<dyn Error> Functions ---
+Parse '42': Ok(42)
+Parse 'invalid': Err(Validation error: Invalid config: invalid digit found in string)
+Connect 'localhost': Ok("Connected to localhost")
+Connect 'fail': Err(Database error: Connection refused)
+Fetch user 1: Ok("User 1")
+Fetch user 0: Err(User with id 0 not found)
+Request https: Ok("success")
+Request http: Err(Network error: Insecure URL)
+
+--- Error Chains ---
+Success case: Ok("User 1")
+DB failure chain:
+Error: Failed to connect to database
+  Caused by (1): Database error: Connection refused
+
+User failure chain:
+Error: Failed to fetch user
+  Caused by (1): User with id 0 not found
+
+--- From Trait Conversion ---
+Converted DomainError to AppError: Validation error: test
+
+=== Exercise Complete ===

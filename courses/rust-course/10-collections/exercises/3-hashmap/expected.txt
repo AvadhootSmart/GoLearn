@@ -1,0 +1,19 @@
+Total tracked: 3
+msg-001 status: Some("pending")
+Is msg-001 tracked: true
+Is msg-999 tracked: false
+After updates:
+  msg-001: Some("sent")
+  msg-002: Some("delivered")
+  msg-003: Some("failed")
+msg-003 retries: 3
+Sent count: 1
+Delivered count: 1
+Failed count: 1
+Failed messages: ["msg-003"]
+New message status: unknown
+Modified msg-001: Some("sent (confirmed)")
+Word counts: {"world": 3, "hello": 2, "rust": 1}
+Merged map: {"c": 3, "a": 1, "b": 20}
+From lists: {"x": 10, "y": 20, "z": 30}
+After removal, total: 4

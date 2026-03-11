@@ -1,0 +1,36 @@
+=== Option Tests ===
+Some is_some: true
+None is_none: true
+unwrap_or default: 0
+Mapped doubled: Some(84)
+Extracted content: Some("Hello")
+
+=== Result Tests ===
+Ok is_ok: true
+Err is_err: true
+ok() gives: Some(100)
+err() gives: Some("Something went wrong")
+Mapped Ok: Ok(200)
+Mapped Err: Err("ERROR: Something went wrong")
+With default: 0
+
+=== MessageStatus Tests ===
+Pending is_delivered: false
+Delivered is_delivered: true
+Failed is_failed: true
+Processing progress: Some(DeliveryProgress { step: 2, total_steps: 5, message: "Validating" })
+Failed error_message: Some("Network timeout")
+
+=== WebResponse Tests ===
+Success is_success: true
+ClientError is_success: false
+Success status: 200
+ClientError status: 400
+ServerError status: 503
+Success data: Some(SmsMessage { id: 1, content: "Test", recipient: "+1234567890" })
+ClientError data: None
+
+=== Chaining Operations ===
+Found message: Some(SmsMessage { id: 1, content: "Found", recipient: "+1111111111" })
+Validated message: Some(SmsMessage { id: 1, content: "Found", recipient: "+1111111111" })
+Not found: None

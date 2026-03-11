@@ -1,0 +1,12 @@
++15551234567
++447911123456
+Domestic regular 2 segments: $0.10
+International regular 2 segments: $0.15
+Domestic priority 2 segments: $0.14
+International priority 2 segments: $0.19
+Original (59 chars): This is a very long message that needs to be truncated
+Truncated to 20: This is a very long 
+Truncated to 100: This is a very long message that needs to be truncated
+Valid! Segments needed: 1
+Error: Recipient cannot be empty
+Error: Message requires 2 segments, but maximum is 1

@@ -1,0 +1,79 @@
+=== MessageStatus Display ===
+Pending
+Sent
+Delivered at 1700000000
+Failed (500): Timeout
+Cancelled by user
+
+=== is_terminal ===
+Pending: false
+Delivered: true
+Failed: true
+Cancelled: true
+
+=== can_retry ===
+Failed 400: true
+Failed 500: false
+Pending: false
+
+=== describe_external_status ===
+"Message is queued"
+"Message completed successfully"
+
+=== handle_delivery_result ===
+Success: Message msg_1 delivered successfully in 1 segment(s)
+Partial: Message msg_2 partially delivered: 2/3 segments
+Failed: Delivery failed (code 500): Error
+Pending: Delivery pending (retry 1)
+
+=== count_segments ===
+Success: Some(1)
+Partial: Some(3)
+Failed: None
+
+=== is_feature_enabled ===
+SMS on Free: true
+MMS on Free: false
+MMS on Pro: true
+Webhooks on Basic: false
+Webhooks on Pro: true
+Analytics on Enterprise: true
+
+=== categorize_http_status ===
+100: Informational
+200: Success
+301: Redirection
+404: ClientError
+500: ServerError
+999: Unknown
+
+=== analyze_results ===
+Summary: ResultSummary { total: 4, successful: 2, failed: 1, pending: 1 }
+
+=== describe_slice ===
+[]: Empty
+[1]: One element
+[1, 2]: Two elements
+[1, 2, 3]: Three elements
+[1, 2, 3, 4, 5]: Many elements
+
+=== extract_all_timestamps ===
+Timestamps: [1000, 2000]
+
+=== status_to_priority ===
+Pending: Low
+Sent: Normal
+Delivered: High
+Failed: Critical
+
+=== validate_transition ===
+Pending -> Sent: Ok(())
+Pending -> Delivered: Err("Cannot go from Pending to Delivered")
+Sent -> Delivered: Ok(())
+Delivered -> Sent: Err("Cannot transition from Delivered")
+
+=== summarize_plan_features ===
+Free: ["SMS"]
+Basic: ["SMS", "MMS"]
+Pro: ["SMS", "MMS", "Scheduled Messages", "Webhooks"]
+Enterprise: ["SMS", "MMS", "Scheduled Messages", "Webhooks", "Analytics", "Priority Support"]

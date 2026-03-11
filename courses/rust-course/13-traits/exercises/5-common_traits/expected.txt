@@ -1,0 +1,42 @@
+=== MessageId ===
+Display: msg_abc123@1699999999
+Debug: MessageId { id: "abc123", timestamp: 1699999999 }
+From string: msg_xyz789@1700000000
+Default: msg_unknown@0
+
+=== Priority ===
+Low: low < High: high ? true
+Debug: High
+
+=== SmsMessage ===
+[normal] msg_abc123@1699999999
+From: +15559876543
+To: +15551234567
+Hello from Textio!
+
+Debug: SmsMessage { id: MessageId { id: "abc123", timestamp: 1699999999 }, to: "+15551234567", from: "+15559876543", body: "Hello from Textio!", priority: Normal }
+
+From string:
+[normal] msg_unknown@0
+From: +15553334444
+To: +15551112222
+Test message
+
+=== Equality ===
+Messages are equal
+Messages are different
+
+=== Defaults ===
+Default message: [normal] msg_unknown@0
+From: 
+To: 
+
+Default config: SmsConfig { max_length: 160, encoding: "GSM-7", require_delivery_report: false }
+
+=== PhoneNumber ===
+Valid phone: +15551234567
+As ref: +15551234567
+Expected error: Invalid phone number format
+
+=== MessageExt ===
+Summary: SMS[test] to: +15550000000 (4 chars)

@@ -1,0 +1,25 @@
+Raw message: '  Hello, Textio User!  '
+Trimmed: 'Hello, Textio User!'
+Uppercase: 'HELLO, TEXTIO USER!'
+Character count: 20
+
+Outer status: idle
+Inner status: processing
+Nested status: sending
+Inner status again: processing
+Outer status restored: idle
+
+Data as string: '42'
+Data as integer: 42
+Data doubled: 84
+
+Counter start: 0
+Counter +1: 1
+Counter +1: 2
+
+=== Phone Number Processing ===
+Original: +1-555-123-4567
+Without country code: 555-123-4567
+Without dashes: 5551234567
+As number: 5551234567
+Formatted: +1 (555) 123-4567

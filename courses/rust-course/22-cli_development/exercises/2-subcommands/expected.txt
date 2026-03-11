@@ -1,0 +1,135 @@
+=== Expected Output Examples ===
+
+--- Send a message ---
+$ cargo run -- send --to +1234567890 --message "Hello, World!" --api-key secret123
+
+Sending SMS...
+To: +1234567890
+Message: Hello, World!
+---
+Message sent successfully!
+
+--- Send with verbose mode ---
+$ cargo run -- -v send -t +1234567890 -m "Test message" -k myapikey
+
+Verbose mode enabled
+Sending SMS...
+API Key: myapikey...
+To: +1234567890
+Message: Test message
+---
+Message sent successfully!
+
+--- View message history ---
+$ cargo run -- history
+
+Message History (showing 10)
+-------------------
+[2024-01-15 10:30] +1234567890 -> Hello from Textio!
+[2024-01-15 09:15] +1987654321 -> Your code is 123456
+[2024-01-14 16:45] +1555555555 -> Meeting at 3pm
+[2024-01-14 12:00] +1444444444 -> Order shipped!
+[2024-01-13 08:30] +1333333333 -> Welcome to our service
+
+--- View history with limit ---
+$ cargo run -- history --limit 2
+
+Message History (showing 2)
+-------------------
+[2024-01-15 10:30] +1234567890 -> Hello from Textio!
+[2024-01-15 09:15] +1987654321 -> Your code is 123456
+
+--- View history with verbose ---
+$ cargo run -- -v history --limit 2
+
+Verbose mode enabled
+Message History (showing 2)
+-------------------
+[2024-01-15 10:30] To: +1234567890
+  Message: Hello from Textio!
+
+[2024-01-15 09:15] To: +1987654321
+  Message: Your code is 123456
+
+--- Add a contact ---
+$ cargo run -- contact add Alice +1234567890
+
+Adding contact...
+Contact 'Alice' added successfully!
+
+--- Add contact with verbose ---
+$ cargo run -- -v contact add Bob +1987654321
+
+Verbose mode enabled
+Adding contact...
+Name: Bob
+Phone: +1987654321
+Contact 'Bob' added successfully!
+
+--- List contacts ---
+$ cargo run -- contact list
+
+Contacts:
+---------
+Alice: +1234567890
+Bob: +1987654321
+Charlie: +1555555555
+
+--- Remove a contact ---
+$ cargo run -- contact remove Alice
+
+Removing contact 'Alice'...
+Contact removed successfully!
+
+--- Send without API key (error) ---
+$ cargo run -- send --to +1234567890 --message "Test"
+
+Error: API key required for sending messages
+Use --api-key or -k to provide your API key
+
+--- Help for main command ---
+$ cargo run -- --help
+
+Textio SMS CLI - Manage your SMS communications
+
+Usage: textio [OPTIONS] <COMMAND>
+
+Commands:
+  send     Send an SMS message
+  history  View message history
+  contact  Manage contacts
+  help     Print this message or the help of the given subcommand(s)
+
+Options:
+  -k, --api-key <API_KEY>  API key for authentication
+  -v, --verbose            Enable verbose output
+  -h, --help               Print help
+  -V, --version            Print version
+
+--- Help for send subcommand ---
+$ cargo run -- send --help
+
+Send an SMS message
+
+Usage: textio send --to <TO> --message <MESSAGE>
+
+Options:
+  -t, --to <TO>            Recipient phone number
+  -m, --message <MESSAGE>  Message content
+  -h, --help               Print help
+
+--- Help for contact subcommand ---
+$ cargo run -- contact --help
+
+Manage contacts
+
+Usage: textio contact <COMMAND>
+
+Commands:
+  add     Add a new contact
+  list    List all contacts
+  remove  Remove a contact
+  help    Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help  Print help

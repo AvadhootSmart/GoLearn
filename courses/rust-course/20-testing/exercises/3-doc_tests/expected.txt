@@ -1,0 +1,36 @@
+$ cargo test --doc
+
+running 42 tests
+
+test src/lib.rs - calculate_cost (line 180) ... ok
+test src/lib.rs - calculate_cost (line 187) ... ok
+test src/lib.rs - calculate_cost (line 188) ... ok
+test src/lib.rs - calculate_cost (line 189) ... ok
+test src/lib.rs - calculate_cost (line 190) ... ok
+test src/lib.rs - calculate_cost (line 191) ... ok
+test src/lib.rs - calculate_cost (line 192) ... ok
+test src/lib.rs - Client (line 90) ... ok
+test src/lib.rs - Client::get_message (line 157) ... ok
+test src/lib.rs - Client::message_count (line 175) ... ok
+test src/lib.rs - Client::new (line 104) ... ok
+test src/lib.rs - Client::send (line 136) ... ok
+test src/lib.rs - Client::send (line 144) ... ok
+test src/lib.rs - Message (line 29) ... ok
+test src/lib.rs - Message::char_count (line 74) ... ok
+test src/lib.rs - Message::char_count (line 78) ... ok
+test src/lib.rs - Message::char_count (line 81) ... ok
+test src/lib.rs - Message::is_valid (line 52) ... ok
+test src/lib.rs - Message::is_valid (line 56) ... ok
+test src/lib.rs - Message::is_valid (line 60) ... ok
+test src/lib.rs - Message::is_valid (line 64) ... ok
+test src/lib.rs - Message::new (line 38) ... ok
+test src/lib.rs - validate_phone (line 222) ... ok
+test src/lib.rs - validate_phone (line 227) ... ok
+test src/lib.rs - validate_phone (line 233) ... ok
+test src/lib.rs - validate_phone (line 237) ... ok
+test src/lib.rs - validate_phone (line 241) ... ok
+test src/lib.rs - format_message (line 274) ... ok
+test src/lib.rs - format_message (line 278) ... ok
+test src/lib.rs - (line 15) ... ok
+
+test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out

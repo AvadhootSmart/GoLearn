@@ -1,0 +1,34 @@
+=== Part 1: Shared Configuration ===
+
+Initial ref count: 1
+After ServiceManager: 2
+After SMS service: 3
+After Email service: 4
+
+[SMS-Gateway] Sending to +15550100: Hello from Textio! (api_key: textio_key_123)
+[Email-Gateway] Email to user@example.com: Welcome - Thanks for joining!
+
+=== Part 2: Message Graph ===
+
+Message 1 ref count: 2
+Total messages in graph: 3
+Found message 2: Bob - Hi Alice!
+
+=== Part 3: Shared Templates ===
+
+Welcome template ref count: 2
+Welcome template ref count after campaigns: 4
+
+[Spring Sale] Hi Alice! Use code {code} for 20% off!
+[New User] Hello Bob, welcome to Textio!
+Template usage - welcome: 1, promo: 1
+
+=== Part 4: Workflow DAG ===
+
+Executing workflow:
+  1. Initialize connection
+  2. Authenticate user
+  3. Fetch messages
+  4. Send response
+
+Workflow complete: true

@@ -1,0 +1,44 @@
+=== Textio Array Slices Exercise ===
+
+Test 1: Get Recent Messages
+All messages: 6 total
+Last 3 messages:
+  ID 4: to +1-555-0103
+  ID 5: to +1-555-0104
+  ID 6: to +1-555-0105
+
+Test 2: Average Message Length
+Average content length: 19.83 characters
+Empty slice average: 0.00
+
+Test 3: Find Message by ID
+Found ID 3: Some("Delivery confirmed")
+Found ID 99: None
+
+Test 4: Partition Messages
+First half (3 messages):
+  ID 1
+  ID 2
+  ID 3
+Second half (3 messages):
+  ID 4
+  ID 5
+  ID 6
+
+Test 5: Slice Flexibility
+Array slice: [2, 3]
+Vector slice: [30, 40, 50]
+as_slice(): [100, 200, 300]
+Sorted mutable slice: [1, 2, 5, 8, 9]
+Chunks of 2:
+  [1, 2]
+  [3, 4]
+  [5, 6]
+  [7, 8]
+Windows of 3:
+  [1, 2, 3]
+  [2, 3, 4]
+  [3, 4, 5]
+  [4, 5, 6]
+  [5, 6, 7]
+  [6, 7, 8]

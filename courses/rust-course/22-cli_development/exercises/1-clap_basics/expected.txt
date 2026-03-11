@@ -1,0 +1,81 @@
+=== Expected Output Examples ===
+
+--- Running with required arguments ---
+$ cargo run -- --to +1234567890 --message "Hello, World!" --api-key secret123
+
+Sending SMS...
+To: +1234567890
+Message: Hello, World!
+---
+Message sent successfully!
+
+--- Running with verbose mode ---
+$ cargo run -- --to +1234567890 --message "Test message" --api-key myapikey -v
+
+Sending SMS...
+To: +1234567890
+Message: Test message
+---
+Verbose mode enabled
+API Key: myapikey...
+Timeout: 30s
+---
+Message sent successfully!
+
+--- Running with short flags ---
+$ cargo run -- -t +1234567890 -m "Short flags work!" -k secret
+
+Sending SMS...
+To: +1234567890
+Message: Short flags work!
+---
+Message sent successfully!
+
+--- Running with custom timeout ---
+$ cargo run -- --to +1234567890 --message "Test" --api-key key --timeout 60 -v
+
+Sending SMS...
+To: +1234567890
+Message: Test
+---
+Verbose mode enabled
+API Key: key...
+Timeout: 60s
+---
+Message sent successfully!
+
+--- Running without API key ---
+$ cargo run -- --to +1234567890 --message "Test"
+
+Error: API key required. Set TEXTIO_API_KEY environment variable or use --api-key
+
+--- Help output ---
+$ cargo run -- --help
+
+Textio SMS CLI - Send messages from the command line
+
+Usage: textio --to <TO> --message <MESSAGE> [OPTIONS]
+
+Options:
+  -t, --to <TO>              The phone number recipient (e.g., +1234567890)
+  -m, --message <MESSAGE>    The message content to send
+  -k, --api-key <API_KEY>    API key for authentication (or set TEXTIO_API_KEY env var)
+  -v, --verbose              Enable verbose output
+      --timeout <TIMEOUT>    Request timeout in seconds [default: 30]
+  -h, --help                 Print help
+  -V, --version              Print version
+
+--- Using environment variable ---
+$ export TEXTIO_API_KEY=env_secret_key
+$ cargo run -- --to +1234567890 --message "Using env var"
+
+Sending SMS...
+To: +1234567890
+Message: Using env var
+---
+Message sent successfully!
+
+--- Version output ---
+$ cargo run -- --version
+
+textio 1.0

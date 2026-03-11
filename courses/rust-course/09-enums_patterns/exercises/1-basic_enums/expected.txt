@@ -1,0 +1,31 @@
+=== MessageStatus ===
+Initial: Pending
+In progress: true
+Description: Message is pending
+
+After sent: Sent
+In progress: true
+
+After delivered: Delivered { timestamp: 1700000000 }
+Is terminal: true
+Error code: None
+
+Failed status: Failed { error_code: 500, error_message: "Network timeout" }
+Error code: Some(500)
+
+=== Priority ===
+Low level: 0, urgent: false
+Normal level: 1, urgent: false
+High level: 2, urgent: false
+Urgent level: 3, urgent: true
+
+Comparison: High < Urgent = true
+Comparison: Low < Normal = true
+
+=== Recipient ===
+Phone: Phone: +1234567890, individual: true, count: 1
+Group: Group #42, individual: false, count: 100
+List: List 'Marketing Team' (150 contacts), individual: false, count: 150
+
+=== Combined Usage ===
+Sending to Phone: +1555123456 with High priority. Status: Message is pending

@@ -1,0 +1,144 @@
+# Expected Output for Exercise 3: CLI Arguments
+
+## Running `cargo run` with complete.rs
+
+### Help
+```
+$ cargo run -- -h
+Textio - SMS Messaging CLI
+
+USAGE:
+    textio <command> [options]
+
+COMMANDS:
+    send <to> <message>    Send an SMS message
+        --from <id>        Set sender ID
+    status <id>            Check message status
+    contacts <action>      Manage contacts
+        list               List all contacts
+        add <name> <phone> Add a contact
+        remove <phone>     Remove a contact
+    config [key] [value]   View or set configuration
+
+OPTIONS:
+    -h, --help             Print this help message
+    -v, --version          Print version info
+```
+
+### Version
+```
+$ cargo run -- --version
+Textio CLI v1.0.0
+```
+
+### Send Message
+```
+$ cargo run -- send +1234567890 "Hello, World!"
+Sending message...
+  To: +1234567890
+  Message: Hello, World!
+```
+
+### Send Message with Sender ID
+```
+$ cargo run -- send +1234567890 "Hello" --from Textio
+Sending message...
+  To: +1234567890
+  Message: Hello
+  From: Textio
+```
+
+### Check Status
+```
+$ cargo run -- status msg_abc123
+Checking status for: msg_abc123
+```
+
+### List Contacts
+```
+$ cargo run -- contacts list
+Listing contacts...
+```
+
+### Add Contact
+```
+$ cargo run -- contacts add "John Doe" +1234567890
+Adding contact: John Doe (+1234567890)
+```
+
+### Remove Contact
+```
+$ cargo run -- contacts remove +1234567890
+Removing contact: +1234567890
+```
+
+### View Config
+```
+$ cargo run -- config
+Showing all config...
+```
+
+### Get Config Value
+```
+$ cargo run -- config api_key
+Getting config: api_key
+```
+
+### Set Config Value
+```
+$ cargo run -- config api_key secret123
+Setting api_key = secret123
+```
+
+### Error: Invalid Command
+```
+$ cargo run -- unknown
+Error: Unknown command: unknown. Use -h for help.
+```
+
+### Error: Missing Arguments
+```
+$ cargo run -- send
+Error: Usage: send <to> <message> [--from <sender>]
+```
+
+### Error: Invalid Phone
+```
+$ cargo run -- send 123 "Hello"
+Error: Invalid phone number: must be 10-15 digits, got 3
+```
+
+## Running `cargo test`
+
+```
+running 13 tests
+test tests::test_help_flag ... ok
+test tests::test_version_flag ... ok
+test tests::test_send_command ... ok
+test tests::test_send_command_with_from ... ok
+test tests::test_status_command ... ok
+test tests::test_contacts_list ... ok
+test tests::test_contacts_add ... ok
+test tests::test_config_view ... ok
+test tests::test_config_get ... ok
+test tests::test_config_set ... ok
+test tests::test_validate_phone_valid ... ok
+test tests::test_validate_phone_invalid ... ok
+test tests::test_extract_flags ... ok
+test tests::test_unknown_command ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Command Reference
+
+| Command | Arguments | Description |
+|---------|-----------|-------------|
+| `send` | `<to> <message> [--from <id>]` | Send SMS |
+| `status` | `<message_id>` | Check status |
+| `contacts list` | - | List contacts |
+| `contacts add` | `<name> <phone>` | Add contact |
+| `contacts remove` | `<phone>` | Remove contact |
+| `config` | `[key] [value]` | View/set config |
+| `-h, --help` | - | Show help |
+| `-v, --version` | - | Show version |
